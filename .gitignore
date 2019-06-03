@@ -197,3 +197,14 @@ git_stats/*
 StyleCop.Cache
 bin
 obj
+*.cs
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.cs
+*.cs
+*.cache
+*.cs
+InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/Login.g.i.cs
+InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/InterfazSCI_1.0_MarkupCompile.lref
