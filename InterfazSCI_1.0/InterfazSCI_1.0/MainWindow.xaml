@@ -98,7 +98,7 @@
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Left" Height="268" Margin="12,104,0,0" VerticalAlignment="Top" Width="588" Grid.ColumnSpan="4"/>
+                    <ListView HorizontalAlignment="Left" Height="268" Margin="12,104,0,0" VerticalAlignment="Top" Width="588" Grid.ColumnSpan="4"/>
                     <Label Content="Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="10,26,0,0" Width="170" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Column="2"/>
                     <Button Name="btnAgregarUsu" Content="Agregar nuevo Usuario" HorizontalAlignment="Left" VerticalAlignment="Top" Width="184" Margin="399,34,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Grid.Column="3" Click="BtnAgregarUsu_Click"/>
                 </Grid>
