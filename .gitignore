@@ -208,3 +208,13 @@ obj
 *.cs
 InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/Login.g.i.cs
 InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/InterfazSCI_1.0_MarkupCompile.lref
+*.p7s
+*.transform
+*.nupkg
+*.dll
+*.xml
+*.txt
+*.psd1
+*.psm1
+*.ps1
+*.exe
