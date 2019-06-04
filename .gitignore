@@ -11,6 +11,13 @@
 *.user
 *.sln.docstates
 
+/ProyectoFinal-SCI/InterfazSCI_1.0/.vs
+/ProyectoFinal-SCI/InterfazSCI_1.0/packages
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.Data/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.Data.Tests/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.DesktopClient.Tests/obj
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
