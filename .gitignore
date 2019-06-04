@@ -11,6 +11,15 @@
 *.user
 *.sln.docstates
 
+/ProyectoFinal-SCI/InterfazSCI_1.0/.vs
+/ProyectoFinal-SCI/InterfazSCI_1.0/packages
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.Data/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.Data.Tests/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/SCI.DesktopClient.Tests/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/obj
+/ProyectoFinal-SCI/InterfazSCI_1.0/InterfazSCI_1.0/obj
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -215,3 +224,5 @@ InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/InterfazSCI_1.0_MarkupCompile.lref
 *.psm1
 *.ps1
 *.exe
+InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/InterfazSCI_1.0_MarkupCompile.lref
+InterfazSCI_1.0/InterfazSCI_1.0/obj/Debug/InterfazSCI_1.0_MarkupCompile.cache
