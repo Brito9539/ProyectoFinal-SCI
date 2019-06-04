@@ -12,20 +12,20 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto_has_proveedor
+    public partial class producto_has_proveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto_has_proveedor()
+        public producto_has_proveedor()
         {
-            this.entrada = new HashSet<Entrada>();
+            this.entrada = new HashSet<entrada>();
         }
     
         public string idProducto { get; set; }
         public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Entrada> entrada { get; set; }
-        public virtual Producto producto { get; set; }
-        public virtual Proveedor proveedor { get; set; }
+        public virtual ICollection<entrada> entrada { get; set; }
+        public virtual producto producto { get; set; }
+        public virtual proveedor proveedor { get; set; }
     }
 }

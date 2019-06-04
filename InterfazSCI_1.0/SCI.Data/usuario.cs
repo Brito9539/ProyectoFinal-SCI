@@ -12,14 +12,14 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public usuario()
         {
-            this.entrada = new HashSet<Entrada>();
-            this.salida = new HashSet<Salida>();
-            this.salida1 = new HashSet<Salida>();
+            this.entrada = new HashSet<entrada>();
+            this.salida = new HashSet<salida>();
+            this.salida1 = new HashSet<salida>();
         }
     
         public string Matricula { get; set; }
@@ -32,10 +32,10 @@ namespace SCI.Data
         public string Contraseña { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Entrada> entrada { get; set; }
+        public virtual ICollection<entrada> entrada { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Salida> salida { get; set; }
+        public virtual ICollection<salida> salida { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Salida> salida1 { get; set; }
+        public virtual ICollection<salida> salida1 { get; set; }
     }
 }

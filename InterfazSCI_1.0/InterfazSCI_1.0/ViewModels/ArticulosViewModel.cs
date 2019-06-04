@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfazSCI_1._0.ViewModels
+namespace SCI.DesktopClient.ViewModels
 {
     class ArticulosViewModel : ViewModel
     {

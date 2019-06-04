@@ -12,13 +12,13 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public producto()
         {
-            this.producto_has_proveedor = new HashSet<Producto_has_proveedor>();
-            this.salida = new HashSet<Salida>();
+            this.producto_has_proveedor = new HashSet<producto_has_proveedor>();
+            this.salida = new HashSet<salida>();
         }
     
         public string idProducto { get; set; }
@@ -28,8 +28,8 @@ namespace SCI.Data
         public Nullable<double> PuntoReorden { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto_has_proveedor> producto_has_proveedor { get; set; }
+        public virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Salida> salida { get; set; }
+        public virtual ICollection<salida> salida { get; set; }
     }
 }

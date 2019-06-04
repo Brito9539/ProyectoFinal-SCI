@@ -25,12 +25,12 @@ namespace SCI.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Entrada> Entrada { get; set; }
-        public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<Producto_has_proveedor> Producto_has_proveedor { get; set; }
-        public virtual DbSet<Proveedor> Proveedor { get; set; }
-        public virtual DbSet<Salida> Salida { get; set; }
-        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<entrada> entrada { get; set; }
+        public virtual DbSet<producto> producto { get; set; }
+        public virtual DbSet<producto_has_proveedor> producto_has_proveedor { get; set; }
+        public virtual DbSet<proveedor> proveedor { get; set; }
+        public virtual DbSet<salida> salida { get; set; }
+        public virtual DbSet<ubicacion> ubicacion { get; set; }
+        public virtual DbSet<usuario> usuario { get; set; }
     }
 }

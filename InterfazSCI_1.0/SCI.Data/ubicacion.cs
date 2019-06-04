@@ -12,12 +12,12 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Ubicacion
+    public partial class ubicacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ubicacion()
+        public ubicacion()
         {
-            this.proveedor = new HashSet<Proveedor>();
+            this.proveedor = new HashSet<proveedor>();
         }
     
         public int idUbicacion { get; set; }
@@ -27,6 +27,6 @@ namespace SCI.Data
         public string Colonia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Proveedor> proveedor { get; set; }
+        public virtual ICollection<proveedor> proveedor { get; set; }
     }
 }

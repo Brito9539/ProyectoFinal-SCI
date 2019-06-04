@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SCI.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace InterfazSCI_1._0
             Style s = new Style();
             s.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
             tcmenu.ItemContainerStyle = s;
+            DataContext = new UsuariosViewModel();
 
         }
 

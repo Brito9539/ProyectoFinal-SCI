@@ -12,7 +12,7 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Entrada
+    public partial class entrada
     {
         public int idEntrada { get; set; }
         public string USUARIO_Matricula { get; set; }
@@ -24,7 +24,7 @@ namespace SCI.Data
         public string nofactura { get; set; }
         public Nullable<double> cantidad { get; set; }
     
-        public virtual Producto_has_proveedor producto_has_proveedor { get; set; }
-        public virtual Usuario usuario { get; set; }
+        public virtual producto_has_proveedor producto_has_proveedor { get; set; }
+        public virtual usuario usuario { get; set; }
     }
 }

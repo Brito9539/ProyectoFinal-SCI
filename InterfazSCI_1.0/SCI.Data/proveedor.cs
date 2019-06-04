@@ -12,12 +12,12 @@ namespace SCI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Proveedor
+    public partial class proveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proveedor()
+        public proveedor()
         {
-            this.producto_has_proveedor = new HashSet<Producto_has_proveedor>();
+            this.producto_has_proveedor = new HashSet<producto_has_proveedor>();
         }
     
         public string Codigo { get; set; }
@@ -27,7 +27,7 @@ namespace SCI.Data
         public int idUbicacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto_has_proveedor> producto_has_proveedor { get; set; }
-        public virtual Ubicacion ubicacion { get; set; }
+        public virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
+        public virtual ubicacion ubicacion { get; set; }
     }
 }

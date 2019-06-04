@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfazSCI_1._0
+namespace SCI.DesktopClient.ViewModels
 {
     class MainViewModel
     {
@@ -13,7 +13,7 @@ namespace InterfazSCI_1._0
         public MainViewModel()
         {
             _children = new ObservableCollection<object>();
-            _children.Add(new EntradaViewModel());
+            _children.Add(new UsuariosViewModel());
         }
 
         public ObservableCollection<object> Children { get { return _children; } }

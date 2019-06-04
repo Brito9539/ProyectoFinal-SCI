@@ -8,7 +8,7 @@ namespace SCI.Data
 {
     public class BusinessContext : IDisposable
     {
-        private readonly sci_bdEntities context;
+        private sci_bdEntities context;
         private bool disposed;
 
         public BusinessContext()
@@ -16,7 +16,7 @@ namespace SCI.Data
             context = new sci_bdEntities();
         }
 
-        public void AddUsuario(Usuario usuario)
+        public void AddUsuario(usuario usuario)
         {
             //TODO: añadir validaciones a campos obligatorios
             Check.Require(usuario.Matricula);
@@ -26,8 +26,26 @@ namespace SCI.Data
             if (usuario.Admin == null)
                 throw new ArgumentNullException();
 
-            context.Usuario.Add(usuario);
+            context.usuario.Add(usuario);
             context.SaveChanges();
+        }
+
+        public void UpdateUsuario(usuario usuario)
+        {
+            var entity = context.usuario.Find(usuario.Matricula);
+
+            if (entity == null)
+            {
+
+            }
+
+            context.Entry(usuario).CurrentValues.SetValues(usuario);
+            context.SaveChanges();
+        }
+
+        public ICollection<usuario> GetUsuarios()
+        {
+            return context.usuario.ToArray();
         }
 
         //patr[on de chequeo para validar si un campo es nulo o esta vacio

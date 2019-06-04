@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:InterfazSCI_1._0"
+        xmlns:viewModels="clr-namespace:SCI.DesktopClient.ViewModels"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewModels:UsuariosViewModel}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <DockPanel x:Name="panelMenu" HorizontalAlignment="Left" Height="419" LastChildFill="False" VerticalAlignment="Bottom" Width="176" OpacityMask="#FF002457" Background="#FF002457" Grid.ColumnSpan="1">
@@ -14,9 +15,9 @@
         <Button x:Name="btnSalidas" Content="Salidas" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="0,188,0,0" Height="27" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnSalidas_Click"/>
         <Button x:Name="btnArticulos" Content="Artículos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="0,215,0,0" Height="27" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnArticulos_Click"/>
         <Button x:Name="btnProveedores" Content="Proveedores" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="0,269,0,0" Height="27" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnProveedores_Click"/>
-        <Button x:Name="btnUsuario" Content="Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="0,242,0,0" Height="27" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnUsuario_Click"/>
+        <Button x:Name="btnUsuario" Content="Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Margin="0,242,0,0" Height="27" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnUsuario_Click" Command="{Binding GetUsuariosCommand}"/>
         <TabControl Name ="tcmenu" HorizontalAlignment="Left" Height="419" Margin="176,0,0,0" VerticalAlignment="Top" Width="616" BorderBrush="White" Foreground="#FF002457">
-            <TabItem DataContext="{Binding Children[0]}" Header="Entradas" Background="white" >
+            <TabItem Header="Entradas" Background="white" >
                 <Grid                 
                     Background="white" Margin="0,-26,0,-1">
                     <Label Content="Entradas" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="10,26,0,0" Width="241" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black"/>
@@ -98,7 +99,19 @@
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <ListView HorizontalAlignment="Left" Height="268" Margin="12,104,0,0" VerticalAlignment="Top" Width="588" Grid.ColumnSpan="4"/>
+                    <DataGrid HorizontalAlignment="Left" Height="268" Margin="12,104,0,0" VerticalAlignment="Top" Width="588" Grid.ColumnSpan="4" ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedUsuario}">
+                        <DataGrid.Resources>
+                            <ContextMenu x:Key="RowMenu"  DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+                                <MenuItem Header="Editar" Command="{Binding RowCopyCommand}" Click="BtnUsuarios_Click"/>
+                                <MenuItem Header="Eliminar" Command="{Binding RowCopyCommand}" />
+                            </ContextMenu>
+                        </DataGrid.Resources>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow" >
+                                <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
                     <Label Content="Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="10,26,0,0" Width="170" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Column="2"/>
                     <Button Name="btnAgregarUsu" Content="Agregar nuevo Usuario" HorizontalAlignment="Left" VerticalAlignment="Top" Width="184" Margin="399,34,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Grid.Column="3" Click="BtnAgregarUsu_Click"/>
                 </Grid>
@@ -106,30 +119,30 @@
             <TabItem Header="Agregar Usu" Background="white" Foreground="#FF002457" >
                 <Grid Background="White" Margin="0,-26,0,-1">
                     <Label Content="Agregar Usuario" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="10,26,0,0" Width="241" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black"/>
-                    <TextBox x:Name="txtNombreUsu" HorizontalAlignment="Left" Height="24" Margin="226,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519" IsEnabled="False" SelectionBrush="#FF060C34"/>
-                    <TextBox x:Name ="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="6,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519"/>
-                    <TextBox x:Name ="txtApMat" HorizontalAlignment="Left" Height="24" Margin="6,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name ="txtApPat" HorizontalAlignment="Left" Height="24" Margin="445,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519"/>
-                    <TextBox x:Name ="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="226,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtNombreUsu" HorizontalAlignment="Left" Height="24" Margin="226,102,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Nombre, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120" Foreground="#FF020519" SelectionBrush="#FF060C34"/>
+                    <TextBox x:Name ="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="6,102,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Matricula, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519"/>
+                    <TextBox x:Name ="txtApMat" HorizontalAlignment="Left" Height="24" Margin="6,178,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Apellido_Materno, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name ="txtApPat" HorizontalAlignment="Left" Height="24" Margin="445,102,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Apellido_Paterno, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120" Foreground="#FF020519"/>
+                    <TextBox x:Name ="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="226,178,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Correo, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Matricula" HorizontalAlignment="Left" Margin="6,76,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                     <Label Content="Apellido Materno" HorizontalAlignment="Left" Margin="6,152,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                     <Label Content="Apellido Paterno" HorizontalAlignment="Left" Margin="445,76,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                     <Label Content="Nombre" HorizontalAlignment="Left" Margin="226,77,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                     <Label Content="Correo" HorizontalAlignment="Left" Margin="226,152,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
-                    <Button x:Name="btnAgregUsu" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="200,320,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnArticulos_Click"/>
-                    <TextBox x:Name ="txtContraseña" HorizontalAlignment="Left" Height="24" Margin="7,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnAgregUsu" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="200,320,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Command="{Binding addUsduarioCommand}"/>
+                    <TextBox x:Name ="txtContraseña" HorizontalAlignment="Left" Height="24" Margin="7,260,0,0" TextWrapping="Wrap" Text="{Binding Usuario.Contraseña, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Contraseña" HorizontalAlignment="Left" Margin="7,234,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131" RenderTransformOrigin="0.5,0.5"/>
                     <TextBox x:Name ="txtConfirm" HorizontalAlignment="Left" Height="24" Margin="226,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Confirmar Contraseña" HorizontalAlignment="Left" Margin="226,234,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131" RenderTransformOrigin="0.5,0.5"/>
-                    <ComboBox x:Name="cmbTipo" HorizontalAlignment="Left" Margin="445,178,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="cmbTipo" HorizontalAlignment="Left" Margin="445,178,0,0" VerticalAlignment="Top" Width="120" Text="{Binding Usuario.Admin, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"/>
                     <Label Content="Tipo" HorizontalAlignment="Left" Margin="445,152,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Editar Usu" Background="white" >
                 <Grid Background="White" Margin="0,-26,0,-1">
                     <Label Content="Editar Usuario" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="10,26,0,0" Width="241" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black"/>
-                    <TextBox x:Name="txtNombreUsu_Copy" HorizontalAlignment="Left" Height="22" Margin="226,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519" IsEnabled="False" SelectionBrush="#FF060C34"/>
-                    <TextBox x:Name ="txtMatricula_Copy" HorizontalAlignment="Left" Height="22" Margin="6,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519"/>
+                    <TextBox x:Name="txtNombreUsu_Copy" HorizontalAlignment="Left" Height="22" Margin="226,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519" SelectionBrush="#FF060C34"/>
+                    <TextBox x:Name ="txtMatricula_Copy" HorizontalAlignment="Left" Height="22" Margin="6,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519" IsEnabled="False"/>
                     <TextBox x:Name ="txtApMat_Copy" HorizontalAlignment="Left" Height="22" Margin="6,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name ="txtApPat_Copy" HorizontalAlignment="Left" Height="22" Margin="445,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519"/>
                     <TextBox x:Name ="txtCorreo_Copy" HorizontalAlignment="Left" Height="22" Margin="226,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>

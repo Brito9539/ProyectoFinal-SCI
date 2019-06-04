@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SCI.Windows;
 using SCI.DesktopClient;
+using SCI.DesktopClient.ViewModels;
 
 namespace SCI.DesktopClient.Tests
 {
