@@ -30,6 +30,17 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
+        public void AddProveedor(proveedor proveedor)
+        {
+            //TODO: añadir validaciones a campos obligatorios
+            Check.Require(proveedor.Codigo);
+            Check.Require(proveedor.Correo);
+            Check.Require(proveedor.Telefono);
+
+            context.proveedor.Add(proveedor);
+            context.SaveChanges();
+        }
+
         public void UpdateUsuario(usuario usuario)
         {
             var entity = context.usuario.Find(usuario.Matricula);
@@ -46,6 +57,11 @@ namespace SCI.Data
         public ICollection<usuario> GetUsuarios()
         {
             return context.usuario.ToArray();
+        }
+
+        public ICollection<proveedor> GetProveedores()
+        {
+            return context.proveedor.ToArray();
         }
 
         //patr[on de chequeo para validar si un campo es nulo o esta vacio

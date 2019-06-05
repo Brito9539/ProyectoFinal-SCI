@@ -27,8 +27,7 @@ namespace InterfazSCI_1._0
             Style s = new Style();
             s.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
             tcmenu.ItemContainerStyle = s;
-            DataContext = new UsuariosViewModel();
-
+            DataContext = new MainViewModel();
         }
 
         private void BtnEntradas_Click(object sender, RoutedEventArgs e)

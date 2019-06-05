@@ -12,8 +12,10 @@ namespace SCI.DesktopClient.ViewModels
         ObservableCollection<object> _children;
         public MainViewModel()
         {
-            _children = new ObservableCollection<object>();
-            _children.Add(new UsuariosViewModel());
+            //_children = new ObservableCollection<object>();
+            UsuariosViewModel usuariovm = new UsuariosViewModel();
+            ProveedorViewModel proveedorvm = new ProveedorViewModel();
+            //_children.Add(new ProveedorViewModel());
         }
 
         public ObservableCollection<object> Children { get { return _children; } }

@@ -91,7 +91,7 @@
                     <Button x:Name="btnAgregArt_Copy" Content="Editar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="200,320,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnArticulos_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Usuarios" Background="white" >
+            <TabItem Header="Usuarios" Background="white" DataContext="">
                 <Grid Background="White" Margin="0,-26,0,-1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
@@ -160,7 +160,7 @@
                     <Label Content="Tipo" HorizontalAlignment="Left" Margin="445,152,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Proveedores" Background="white" >
+            <TabItem Header="Proveedores" Background="white">
                 <Grid Background="White" Margin="0,-26,0,-1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
