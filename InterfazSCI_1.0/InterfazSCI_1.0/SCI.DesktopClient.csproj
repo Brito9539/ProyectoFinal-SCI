@@ -74,6 +74,9 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\ProveedorViewModel.cs" />
     <Compile Include="ViewModels\UsuariosViewModel.cs" />
+    <Compile Include="View\EditarUsuView.xaml.cs">
+      <DependentUpon>EditarUsuView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProveedoresView.xaml.cs">
       <DependentUpon>ProveedoresView.xaml</DependentUpon>
     </Compile>
