@@ -41,6 +41,7 @@ namespace SCI.Data
                 throw new ArgumentNullException();
 
             context.usuario.Add(usuario);
+            context.usuario.;
             context.SaveChanges();
         }
 

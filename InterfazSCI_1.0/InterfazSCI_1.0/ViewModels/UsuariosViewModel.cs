@@ -53,11 +53,19 @@ namespace SCI.DesktopClient.ViewModels
             this.Usuarios = new ObservableCollection<usuario>();
         }
 
-        public ActionCommand addUsduarioCommand
+        public ActionCommand addUsuarioCommand
         {
             get
             {
                 return new ActionCommand(p => AddUsuario(Usuario));
+            }
+        }
+
+        public ActionCommand editUsuarioCommand
+        {
+            get
+            {
+                return new ActionCommand(p => AddUsuario(SelectedUsuario));
             }
         }
 
