@@ -1,4 +1,4 @@
-﻿using SCI.DesktopClient.View;
+﻿using SCI.DesktopClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;

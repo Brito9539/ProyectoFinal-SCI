@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\JavierBuenfil\Documents\GitHub\ProyectoFinal-SCI\InterfazSCI_1.0\InterfazSCI_1.0\App.xaml
-11-1285062828
+111663804193
 
-241646480869
+281869288270
 25-473028005
-Login.xaml;View\AgregarArtView.xaml;View\AgregarProView.xaml;View\AgregarUsuView.xaml;View\ArticulosView.xaml;View\EditarArtView.xaml;View\EditarProView.xaml;View\EditarUsuView.xaml;View\MainWindow.xaml;View\ProveedoresView.xaml;View\UsuariosView.xaml;
+Login.xaml;Views\AgregarArtView.xaml;Views\AgregarProView.xaml;Views\AgregarUsuView.xaml;Views\ArticulosView.xaml;Views\EditarArtView.xaml;Views\EditarProView.xaml;Views\EditarUsuView.xaml;Views\MainWindow.xaml;Views\ProveedoresView.xaml;Views\UsuariosView.xaml;
 
-False
+True
 

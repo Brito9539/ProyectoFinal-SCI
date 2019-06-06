@@ -72,50 +72,54 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Recursos\ActionCommand.cs" />
     <Compile Include="ViewModels\ArticulosViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="ViewModels\ProveedorViewModel.cs" />
     <Compile Include="ViewModels\UsuariosViewModel.cs" />
-    <Compile Include="View\EditarUsuView.xaml.cs">
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\EditarUsuView.xaml.cs">
       <DependentUpon>EditarUsuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProveedoresView.xaml.cs">
+    <Compile Include="Views\ProveedoresView.xaml.cs">
       <DependentUpon>ProveedoresView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UsuariosView.xaml.cs">
+    <Compile Include="Views\UsuariosView.xaml.cs">
       <DependentUpon>UsuariosView.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AgregarArtView.xaml">
+    <Page Include="Views\AgregarArtView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AgregarProView.xaml">
+    <Page Include="Views\AgregarProView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AgregarUsuView.xaml">
+    <Page Include="Views\AgregarUsuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ArticulosView.xaml">
+    <Page Include="Views\ArticulosView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\EditarArtView.xaml">
+    <Page Include="Views\EditarArtView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\EditarProView.xaml">
+    <Page Include="Views\EditarProView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\EditarUsuView.xaml">
+    <Page Include="Views\EditarUsuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -128,33 +132,33 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="View\AgregarArtView.xaml.cs">
+    <Compile Include="Views\AgregarArtView.xaml.cs">
       <DependentUpon>AgregarArtView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AgregarProView.xaml.cs">
+    <Compile Include="Views\AgregarProView.xaml.cs">
       <DependentUpon>AgregarProView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AgregarUsuView.xaml.cs">
+    <Compile Include="Views\AgregarUsuView.xaml.cs">
       <DependentUpon>AgregarUsuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ArticulosView.xaml.cs">
+    <Compile Include="Views\ArticulosView.xaml.cs">
       <DependentUpon>ArticulosView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditarArtView.xaml.cs">
+    <Compile Include="Views\EditarArtView.xaml.cs">
       <DependentUpon>EditarArtView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditarProView.xaml.cs">
+    <Compile Include="Views\EditarProView.xaml.cs">
       <DependentUpon>EditarProView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProveedoresView.xaml">
+    <Page Include="Views\ProveedoresView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UsuariosView.xaml">
+    <Page Include="Views\UsuariosView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

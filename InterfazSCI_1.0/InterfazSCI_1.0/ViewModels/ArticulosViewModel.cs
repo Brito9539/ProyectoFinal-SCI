@@ -6,10 +6,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SCI.DesktopClient.Views;
 
 namespace SCI.DesktopClient.ViewModels
 {
-    class ArticulosViewModel : ViewModel
+    public class ArticulosViewModel : ViewModel
     {
         private readonly BusinessContext context;
         public ICollection<producto> Usuarios { get; private set; }
@@ -72,6 +73,14 @@ namespace SCI.DesktopClient.ViewModels
             get
             {
                 return new ActionCommand(p => UpdateProducto(selectedProducto));
+            }
+        }
+
+        public ActionCommand deleteProductoCommand
+        {
+            get
+            {
+                return new ActionCommand(p => DeleteProducto(selectedProducto));
             }
         }
 
