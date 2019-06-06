@@ -29,11 +29,11 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
-        public void AddProducto(usuario usuario)
+        public void AddProducto(producto producto)
         {
             //TODO: añadir validaciones a campos obligatorios
 
-            context.usuario.Add(usuario);
+            context.producto.Add(producto);
             context.SaveChanges();
         }
 
@@ -55,6 +55,11 @@ namespace SCI.Data
         public ICollection<proveedor> GetProveedores()
         {
             return context.proveedor.ToArray();
+        }
+
+        public ICollection<producto> GetProductos()
+        {
+            return context.producto.ToArray();
         }
 
         //patr[on de chequeo para validar si un campo es nulo o esta vacio
