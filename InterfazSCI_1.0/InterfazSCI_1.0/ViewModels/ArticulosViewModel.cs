@@ -67,7 +67,7 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public void AddProductos(producto _usuario)
+        public void AddProducto(producto _usuario)
         {
             using (var api = new BusinessContext())
             {

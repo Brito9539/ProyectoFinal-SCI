@@ -69,6 +69,14 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
+        public ActionCommand deleteUsuarioCommand
+        {
+            get
+            {
+                return new ActionCommand(p => deleteUsuario(SelectedUsuario));
+            }
+        }
+
         public ActionCommand GetUsuariosCommand
         {
             get
@@ -90,6 +98,22 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Usuarios.Add(_usuario);
+            }
+        }
+
+        private void deleteUsuario(usuario selectedUsuario)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.deleteUsuario(selectedUsuario);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetUsuarios();
             }
         }
 

@@ -62,6 +62,11 @@ namespace SCI.Data
             return context.producto.ToArray();
         }
 
+        public void deleteUsuario(usuario selectedUsuario)
+        {
+            context.usuario.Remove(selectedUsuario);
+        }
+
         //patr[on de chequeo para validar si un campo es nulo o esta vacio
         public static class Check
         {
