@@ -18,7 +18,6 @@ namespace SCI.Data
 
         public void AddUsuario(usuario usuario)
         {
-            //TODO: añadir validaciones a campos obligatorios
             Check.Require(usuario.Matricula);
             Check.Require(usuario.Nombre);
             Check.Require(usuario.Apellido_Paterno);
@@ -33,39 +32,18 @@ namespace SCI.Data
         public void AddProducto(usuario usuario)
         {
             //TODO: añadir validaciones a campos obligatorios
-            Check.Require(usuario.Matricula);
-            Check.Require(usuario.Nombre);
-            Check.Require(usuario.Apellido_Paterno);
-            Check.Require(usuario.Contraseña);
-            if (usuario.Admin == null)
-                throw new ArgumentNullException();
 
             context.usuario.Add(usuario);
-            context.usuario.;
             context.SaveChanges();
         }
 
         public void AddProveedor(proveedor proveedor)
         {
-            //TODO: añadir validaciones a campos obligatorios
             Check.Require(proveedor.Codigo);
             Check.Require(proveedor.Correo);
             Check.Require(proveedor.Telefono);
 
             context.proveedor.Add(proveedor);
-            context.SaveChanges();
-        }
-
-        public void UpdateUsuario(usuario usuario)
-        {
-            var entity = context.usuario.Find(usuario.Matricula);
-
-            if (entity == null)
-            {
-
-            }
-
-            context.Entry(usuario).CurrentValues.SetValues(usuario);
             context.SaveChanges();
         }
 

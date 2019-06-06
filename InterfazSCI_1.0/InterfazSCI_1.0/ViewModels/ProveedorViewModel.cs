@@ -16,7 +16,7 @@ namespace SCI.DesktopClient.ViewModels
         private readonly BusinessContext context;
         public ICollection<proveedor> Proveedores { get; private set; }
         public proveedor _proveedor = new proveedor();
-        private usuario selectedUsuario = new usuario();
+        private usuario selectedProveedor = new usuario();
         public proveedor Proveedor
         {
             get
@@ -30,15 +30,15 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public usuario SelectedUsuario
+        public usuario SelectedProveedor
         {
             get
             {
-                return selectedUsuario;
+                return selectedProveedor;
             }
             set
             {
-                selectedUsuario = value;
+                selectedProveedor = value;
                 NotifyPropertyChanged("SelectedUsuario");
             }
         }
@@ -53,7 +53,7 @@ namespace SCI.DesktopClient.ViewModels
             this.Proveedores = new ObservableCollection<proveedor>();
         }
 
-        public ActionCommand addUsduarioCommand
+        public ActionCommand addProveedorCommand
         {
             get
             {
@@ -61,11 +61,11 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public ActionCommand GetUsuariosCommand
+        public ActionCommand GetProveedoresCommand
         {
             get
             {
-                return new ActionCommand(p => GetUsuarios());
+                return new ActionCommand(p => GetProveedores());
             }
         }
 
@@ -85,11 +85,11 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public void GetUsuarios()
+        public void GetProveedores()
         {
             Proveedores.Clear();
 
-            foreach (var usuario in context.GetUsuarios())
+            foreach (var usuario in context.GetProveedores())
                 Proveedores.Add(Proveedor);
         }
     }
