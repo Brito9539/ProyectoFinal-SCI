@@ -29,6 +29,14 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
+        public void updateUsuario(usuario usuario)
+        {
+            var objeto = context.usuario.Find(usuario.Matricula);
+
+            context.Entry(objeto).CurrentValues.SetValues(usuario);
+            context.SaveChanges();
+        }
+
         public void AddProducto(producto producto)
         {
             //TODO: añadir validaciones a campos obligatorios
