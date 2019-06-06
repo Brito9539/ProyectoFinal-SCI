@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace IntrfazSCI_Final_.Views
+namespace SCI.DesktopClient.Views
 {
     /// <summary>
     /// Lógica de interacción para AgregarArtView.xaml
