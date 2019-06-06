@@ -30,6 +30,20 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
+        public void AddProducto(usuario usuario)
+        {
+            //TODO: añadir validaciones a campos obligatorios
+            Check.Require(usuario.Matricula);
+            Check.Require(usuario.Nombre);
+            Check.Require(usuario.Apellido_Paterno);
+            Check.Require(usuario.Contraseña);
+            if (usuario.Admin == null)
+                throw new ArgumentNullException();
+
+            context.usuario.Add(usuario);
+            context.SaveChanges();
+        }
+
         public void AddProveedor(proveedor proveedor)
         {
             //TODO: añadir validaciones a campos obligatorios

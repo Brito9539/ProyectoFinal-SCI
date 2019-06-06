@@ -77,6 +77,9 @@
     <Compile Include="View\EditarUsuView.xaml.cs">
       <DependentUpon>EditarUsuView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProveedoresView.xaml.cs">
       <DependentUpon>ProveedoresView.xaml</DependentUpon>
     </Compile>
@@ -115,10 +118,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -147,10 +146,10 @@
     <Compile Include="View\EditarProView.xaml.cs">
       <DependentUpon>EditarProView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProveedoresView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
