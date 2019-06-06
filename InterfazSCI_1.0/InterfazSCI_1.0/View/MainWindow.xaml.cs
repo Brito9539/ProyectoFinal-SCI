@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace SCI.DesktopClient.View
 {
-    /// <summary>
+    /// <summary>      
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -26,7 +26,7 @@ namespace SCI.DesktopClient.View
             InitializeComponent();
         }
 
-        private void BtnArticulos_Click(object sender, RoutedEventArgs e)
+        private void btnProveedores_clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new ArticulosViewModel();
         }

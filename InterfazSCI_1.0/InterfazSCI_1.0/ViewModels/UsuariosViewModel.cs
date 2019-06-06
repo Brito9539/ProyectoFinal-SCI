@@ -53,11 +53,43 @@ namespace SCI.DesktopClient.ViewModels
             this.Usuarios = new ObservableCollection<usuario>();
         }
 
-        public ActionCommand addUsduarioCommand
+        public ActionCommand addUsuarioCommand
         {
             get
             {
                 return new ActionCommand(p => AddUsuario(Usuario));
+            }
+        }
+
+        public ActionCommand editUsuarioCommand
+        {
+            get
+            {
+                return new ActionCommand(p => UpdateUsuario(SelectedUsuario));
+            }
+        }
+
+        private void UpdateUsuario(usuario selectedUsuario)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.updateUsuario(selectedUsuario);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetUsuarios();
+            }
+        }
+
+        public ActionCommand deleteUsuarioCommand
+        {
+            get
+            {
+                return new ActionCommand(p => deleteUsuario(SelectedUsuario));
             }
         }
 
@@ -82,6 +114,22 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Usuarios.Add(_usuario);
+            }
+        }
+
+        private void deleteUsuario(usuario selectedUsuario)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.deleteUsuario(selectedUsuario);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                Usuarios.Remove(selectedUsuario);
             }
         }
 

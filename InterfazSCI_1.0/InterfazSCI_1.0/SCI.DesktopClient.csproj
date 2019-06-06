@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\ArticulosViewModel.cs" />
     <Compile Include="ViewModels\ProveedorViewModel.cs" />
     <Compile Include="ViewModels\UsuariosViewModel.cs" />
     <Compile Include="View\EditarUsuView.xaml.cs">
@@ -122,7 +123,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\ArticulosViewModel.cs" />
     <Compile Include="ViewModels\EntradaViewModel.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

@@ -18,7 +18,6 @@ namespace SCI.Data
 
         public void AddUsuario(usuario usuario)
         {
-            //TODO: añadir validaciones a campos obligatorios
             Check.Require(usuario.Matricula);
             Check.Require(usuario.Nombre);
             Check.Require(usuario.Apellido_Paterno);
@@ -30,27 +29,49 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
-        public void AddProveedor(proveedor proveedor)
+        public void updateUsuario(usuario usuario)
+        {
+            var objeto = context.usuario.Find(usuario.Matricula);
+
+            context.Entry(objeto).CurrentValues.SetValues(usuario);
+            context.SaveChanges();
+        }
+
+        public void updateProducto(producto producto)
+        {
+            var objeto = context.producto.Find(producto.idProducto);
+
+            context.Entry(objeto).CurrentValues.SetValues(producto);
+            context.SaveChanges();
+        }
+
+        public void updateProveedor(proveedor proveedor)
+        {
+            var objeto = context.proveedor.Find(proveedor.Codigo);
+
+            Check.Require(proveedor.Codigo);
+            Check.Require(proveedor.Correo);
+            Check.Require(proveedor.Telefono);
+
+            context.Entry(objeto).CurrentValues.SetValues(proveedor);
+            context.SaveChanges();
+        }
+
+        public void AddProducto(producto producto)
         {
             //TODO: añadir validaciones a campos obligatorios
+
+            context.producto.Add(producto);
+            context.SaveChanges();
+        }
+
+        public void AddProveedor(proveedor proveedor)
+        {
             Check.Require(proveedor.Codigo);
             Check.Require(proveedor.Correo);
             Check.Require(proveedor.Telefono);
 
             context.proveedor.Add(proveedor);
-            context.SaveChanges();
-        }
-
-        public void UpdateUsuario(usuario usuario)
-        {
-            var entity = context.usuario.Find(usuario.Matricula);
-
-            if (entity == null)
-            {
-
-            }
-
-            context.Entry(usuario).CurrentValues.SetValues(usuario);
             context.SaveChanges();
         }
 
@@ -62,6 +83,29 @@ namespace SCI.Data
         public ICollection<proveedor> GetProveedores()
         {
             return context.proveedor.ToArray();
+        }
+
+        public ICollection<producto> GetProductos()
+        {
+            return context.producto.ToArray();
+        }
+
+        public void deleteUsuario(usuario selectedUsuario)
+        {
+            context.usuario.Remove(selectedUsuario);
+            context.SaveChanges();
+        }
+
+        public void deleteProveedor(proveedor selectedProveedor)
+        {
+            context.proveedor.Remove(selectedProveedor);
+            context.SaveChanges();
+        }
+
+        public void deleteProducto(producto selectedProducto)
+        {
+            context.producto.Remove(selectedProducto);
+            context.SaveChanges();
         }
 
         //patr[on de chequeo para validar si un campo es nulo o esta vacio
