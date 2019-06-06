@@ -13,30 +13,30 @@ namespace SCI.DesktopClient.ViewModels
     {
         private readonly BusinessContext context;
         public ICollection<producto> Usuarios { get; private set; }
-        public producto _usuario = new producto();
-        private producto selectedUsuario = new producto();
-        public producto Usuario
+        public producto _producto = new producto();
+        private producto selectedProducto = new producto();
+        public producto Producto
         {
             get
             {
-                return _usuario;
+                return _producto;
             }
             private set
             {
-                _usuario = value;
+                _producto = value;
                 NotifyPropertyChanged("Articulo");
             }
         }
 
-        public producto SelectedUsuario
+        public producto SelectedProducto
         {
             get
             {
-                return selectedUsuario;
+                return selectedProducto;
             }
             set
             {
-                selectedUsuario = value;
+                selectedProducto = value;
                 NotifyPropertyChanged("SelectedUsuario");
             }
         }
@@ -55,7 +55,7 @@ namespace SCI.DesktopClient.ViewModels
         {
             get
             {
-                return new ActionCommand(p => AddProducto(Usuario));
+                return new ActionCommand(p => AddProducto(Producto));
             }
         }
 
@@ -64,6 +64,30 @@ namespace SCI.DesktopClient.ViewModels
             get
             {
                 return new ActionCommand(p => GetProductos());
+            }
+        }
+
+        public ActionCommand editProductoCommand
+        {
+            get
+            {
+                return new ActionCommand(p => UpdateProducto(selectedProducto));
+            }
+        }
+
+        private void UpdateProducto(producto SelectedProducto)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.updateProducto(SelectedProducto);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetProductos();
             }
         }
 
@@ -80,6 +104,23 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Usuarios.Add(_usuario);
+            }
+        }
+
+        public void DeleteProducto(producto _producto)
+        {
+
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.deleteProducto(_producto);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetProductos();
             }
         }
 

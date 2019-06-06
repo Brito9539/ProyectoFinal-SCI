@@ -65,7 +65,23 @@ namespace SCI.DesktopClient.ViewModels
         {
             get
             {
-                return new ActionCommand(p => AddProveedor(SelectedProveedor));
+                return new ActionCommand(p => UpdateProveedor(SelectedProveedor));
+            }
+        }
+
+        private void UpdateProveedor(proveedor SelectedProveedor)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.updateProveedor(SelectedProveedor);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetProveedores();
             }
         }
 

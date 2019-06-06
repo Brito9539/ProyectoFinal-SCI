@@ -37,6 +37,26 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
+        public void updateProducto(producto producto)
+        {
+            var objeto = context.producto.Find(producto.idProducto);
+
+            context.Entry(objeto).CurrentValues.SetValues(producto);
+            context.SaveChanges();
+        }
+
+        public void updateProveedor(proveedor proveedor)
+        {
+            var objeto = context.proveedor.Find(proveedor.Codigo);
+
+            Check.Require(proveedor.Codigo);
+            Check.Require(proveedor.Correo);
+            Check.Require(proveedor.Telefono);
+
+            context.Entry(objeto).CurrentValues.SetValues(proveedor);
+            context.SaveChanges();
+        }
+
         public void AddProducto(producto producto)
         {
             //TODO: añadir validaciones a campos obligatorios

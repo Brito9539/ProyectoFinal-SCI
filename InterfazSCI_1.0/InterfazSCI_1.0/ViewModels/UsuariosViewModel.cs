@@ -65,7 +65,23 @@ namespace SCI.DesktopClient.ViewModels
         {
             get
             {
-                return new ActionCommand(p => AddUsuario(SelectedUsuario));
+                return new ActionCommand(p => UpdateUsuario(SelectedUsuario));
+            }
+        }
+
+        private void UpdateUsuario(usuario selectedUsuario)
+        {
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.updateUsuario(selectedUsuario);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetUsuarios();
             }
         }
 
