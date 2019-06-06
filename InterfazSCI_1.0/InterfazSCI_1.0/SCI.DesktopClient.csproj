@@ -122,7 +122,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\ArticulosViewModel.cs" />
+    <Compile Include="ViewModels\ProductosViewModel.cs" />
     <Compile Include="ViewModels\EntradaViewModel.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

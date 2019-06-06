@@ -16,7 +16,7 @@ namespace SCI.DesktopClient.ViewModels
         private readonly BusinessContext context;
         public ICollection<proveedor> Proveedores { get; private set; }
         public proveedor _proveedor = new proveedor();
-        private usuario selectedProveedor = new usuario();
+        private proveedor selectedProveedor = new proveedor();
         public proveedor Proveedor
         {
             get
@@ -30,7 +30,7 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public usuario SelectedProveedor
+        public proveedor SelectedProveedor
         {
             get
             {
@@ -61,6 +61,14 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
+        public ActionCommand editProveedorCommand
+        {
+            get
+            {
+                return new ActionCommand(p => AddProveedor(SelectedProveedor));
+            }
+        }
+
         public ActionCommand GetProveedoresCommand
         {
             get
@@ -82,6 +90,23 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Proveedores.Add(_proveedor);
+            }
+        }
+
+        public void DeleteProveedor(proveedor _proveedor)
+        {
+
+            using (var api = new BusinessContext())
+            {
+                try
+                {
+                    api.deleteProveedor(_proveedor);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+                GetProveedores();
             }
         }
 
