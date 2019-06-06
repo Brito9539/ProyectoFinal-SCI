@@ -65,16 +65,19 @@ namespace SCI.Data
         public void deleteUsuario(usuario selectedUsuario)
         {
             context.usuario.Remove(selectedUsuario);
+            context.SaveChanges();
         }
 
         public void deleteProveedor(proveedor selectedProveedor)
         {
             context.proveedor.Remove(selectedProveedor);
+            context.SaveChanges();
         }
 
         public void deleteProducto(producto selectedProducto)
         {
             context.producto.Remove(selectedProducto);
+            context.SaveChanges();
         }
 
         //patr[on de chequeo para validar si un campo es nulo o esta vacio

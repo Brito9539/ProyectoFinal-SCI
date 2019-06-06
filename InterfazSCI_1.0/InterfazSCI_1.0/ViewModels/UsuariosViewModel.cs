@@ -113,7 +113,7 @@ namespace SCI.DesktopClient.ViewModels
                 {
                     return;
                 }
-                GetUsuarios();
+                Usuarios.Remove(selectedUsuario);
             }
         }
 
