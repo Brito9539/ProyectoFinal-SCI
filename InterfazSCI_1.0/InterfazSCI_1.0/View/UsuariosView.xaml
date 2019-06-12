@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="SCI.DesktopClient.Views.UsuariosView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModel="clr-namespace:SCI.DesktopClient.ViewModels"
+             xmlns:local="clr-namespace:SCI.DesktopClient.Views"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModel:UsuariosViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Label Content="Usuarios" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="173" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="319,74,0,355.6" Width="49">
+            <Hyperlink Command="{Binding GetUsuariosCommand}">refrescar</Hyperlink>
+        </TextBlock>
+        <Button x:Name ="btnAgregarUsu" Content="Agregar Nuevo Usuario" HorizontalAlignment="Left" Margin="493,28,0,0" VerticalAlignment="Top" Width="248" Background="#FF002457" Foreground="White" Height="57" FontFamily="Arial" FontSize="18" Click="BtnAgregarUsu_Click"/>
+        <DataGrid ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedUsuario}" x:Name="dtUsuarios" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694">
+            <DataGrid.Resources>
+                <ContextMenu x:Key="RowMenu">
+                    <MenuItem Header="Editar" Command="{Binding }" Click="BtnUsuarios_Click"/>
+                    <MenuItem Header="Eliminar" Command="{Binding deleteUsuarioCommand}"/>
+                </ContextMenu>
+            </DataGrid.Resources>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow" >
+                    <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+    </Grid>
+</UserControl>
