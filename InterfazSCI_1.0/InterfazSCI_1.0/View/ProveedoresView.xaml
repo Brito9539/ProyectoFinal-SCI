@@ -9,6 +9,6 @@
     <Grid Background="White">
         <Label Content="Proveedores" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="249" FontWeight="Bold"/>
         <Button x:Name ="btnAgregarPro" Content="Agregar Nuevo Proveedor" HorizontalAlignment="Left" Margin="493,28,0,0" VerticalAlignment="Top" Width="248" Background="#FF002457" Foreground="White" Height="57" FontFamily="Arial" FontSize="18" Click="BtnAgregarPro_Click"/>
-        <DataGrid x:Name="dtProveedores" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694"/>
+        <DataGrid x:Name="dtProveedores" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694" Foreground="#FF002457"/>
     </Grid>
 </UserControl>

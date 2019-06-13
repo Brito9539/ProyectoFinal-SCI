@@ -9,22 +9,22 @@
         Title="AgregarUsuView" Height="450" Width="800">
     <Grid Background="White" Margin="0,0,2,-2">
         <Label Content="Agregar Usuario" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.327,5.725" IsEnabled="False" Height="46" Margin="35,31,0,0" Width="241" Background="Transparent" Foreground="#FF002454" FontSize="24" FontFamily="Arial Black"/>
-        <TextBox x:Name="txtNombreUsu" HorizontalAlignment="Left" Height="24" Margin="309,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519" IsEnabled="False" SelectionBrush="#FF060C34"/>
-        <TextBox x:Name ="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="64,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519"/>
-        <TextBox x:Name ="txtApMat" HorizontalAlignment="Left" Height="24" Margin="64,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name ="txtApPat" HorizontalAlignment="Left" Height="24" Margin="557,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF020519"/>
-        <TextBox x:Name ="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="309,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNombreUsu" HorizontalAlignment="Left" Height="24" Margin="309,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457" IsEnabled="False" SelectionBrush="#FF060C34"/>
+        <TextBox x:Name ="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="64,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" SelectionBrush="#FF020519" Foreground="#FF002457"/>
+        <TextBox x:Name ="txtApMat" HorizontalAlignment="Left" Height="24" Margin="64,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <TextBox x:Name ="txtApPat" HorizontalAlignment="Left" Height="24" Margin="557,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <TextBox x:Name ="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="309,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <Label Content="Matricula" HorizontalAlignment="Left" Margin="64,99,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
         <Label Content="Apellido Materno" HorizontalAlignment="Left" Margin="64,175,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
         <Label Content="Apellido Paterno" HorizontalAlignment="Left" Margin="557,107,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="309,100,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
         <Label Content="Correo" HorizontalAlignment="Left" Margin="309,175,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
         <Button x:Name="btnAgregUsu" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="276,349,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" />
-        <TextBox x:Name ="txtContraseña" HorizontalAlignment="Left" Height="24" Margin="65,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name ="txtContraseña" HorizontalAlignment="Left" Height="24" Margin="65,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="65,257,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name ="txtConfirm" HorizontalAlignment="Left" Height="24" Margin="309,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name ="txtConfirm" HorizontalAlignment="Left" Height="24" Margin="309,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <Label Content="Confirmar Contraseña" HorizontalAlignment="Left" Margin="309,257,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131" RenderTransformOrigin="0.5,0.5"/>
-        <ComboBox x:Name="cmbTipo" HorizontalAlignment="Left" Margin="557,209,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbTipo" HorizontalAlignment="Left" Margin="557,209,0,0" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <Label Content="Tipo" HorizontalAlignment="Left" Margin="557,183,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="131"/>
     </Grid>
 </Window>

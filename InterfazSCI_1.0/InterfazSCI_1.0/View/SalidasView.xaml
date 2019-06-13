@@ -9,15 +9,16 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
         <Label Content="Salidas" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="173" FontWeight="Bold"/>
-        <TextBox Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="256,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <TextBox Name="txtUnidad" HorizontalAlignment="Left" Height="23" Margin="444,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <TextBox Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="614,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <TextBox Name="txtNomProduct" HorizontalAlignment="Left" Height="23" Margin="73,178,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <Label Content="Matricula:" HorizontalAlignment="Left" Margin="614,155,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
-        <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="73,152,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.039,0.5" Foreground="#FF002457"/>
-        <Label Content="Unidad:" HorizontalAlignment="Left" Margin="444,155,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
-        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="256,152,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
+        <TextBox Name="txtCantidad" HorizontalAlignment="Left" Height="24" Margin="252,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <TextBox Name="txtUnidad" HorizontalAlignment="Left" Height="24" Margin="440,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <TextBox Name="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="610,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <TextBox Name="txtNomProduct" HorizontalAlignment="Left" Height="24" Margin="68,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
+        <Label Content="Matricula:" HorizontalAlignment="Left" Margin="610,190,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
+        <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="68,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.039,0.5" Foreground="#FF002457"/>
+        <Label Content="Unidad:" HorizontalAlignment="Left" Margin="440,190,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="252,186,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Button x:Name ="btnConfirmSalida" Content="Confirmar Salida" HorizontalAlignment="Left" Margin="284,358,0,0" VerticalAlignment="Top" Width="224" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" />
+        <Button x:Name ="btnGenerarReporte" Content="Generar Reporte" HorizontalAlignment="Left" Margin="536,68,0,0" VerticalAlignment="Top" Width="194" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" />
 
     </Grid>
 </UserControl>

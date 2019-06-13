@@ -100,6 +100,9 @@
     <Compile Include="View\EntradasView.xaml.cs">
       <DependentUpon>EntradasView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\HistorialView.xaml.cs">
+      <DependentUpon>HistorialView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\EntradasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HistorialView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

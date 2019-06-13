@@ -16,6 +16,7 @@ namespace SCI.DesktopClient.ViewModels
         private ProveedoresView ProvView{ get { return new ProveedoresView(); } }
         private EntradasView EntraView {get { return new EntradasView(); } }
         private SalidasView SaliView { get { return new SalidasView(); } }
+        private HistorialView HistoView { get { return new HistorialView(); } }
 
         public MainWindowViewModel()
         {
@@ -42,6 +43,10 @@ namespace SCI.DesktopClient.ViewModels
         public ICommand SetSalidaView
         {
             get { return new ActionCommand((o) => CurrentView =SaliView); }
+        }
+        public ICommand SetHistView
+        {
+            get { return new ActionCommand((o) => CurrentView = HistoView); }
         }
 
 
