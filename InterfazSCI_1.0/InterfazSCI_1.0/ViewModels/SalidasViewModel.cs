@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SCI.DesktopClient.ViewModels
 {
-    public class EntradasViewModel : ViewModel
+    public class SalidasViewModel : ViewModel
     {
     }
 }
