@@ -97,11 +97,17 @@
     <Compile Include="View\EditarUsuView.xaml.cs">
       <DependentUpon>EditarUsuView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EntradasView.xaml.cs">
+      <DependentUpon>EntradasView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProveedoresView.xaml.cs">
       <DependentUpon>ProveedoresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SalidasView.xaml.cs">
+      <DependentUpon>SalidasView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UsuariosView.xaml.cs">
       <DependentUpon>UsuariosView.xaml</DependentUpon>
@@ -147,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\EntradasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -154,6 +164,10 @@
     <Page Include="View\ProveedoresView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SalidasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UsuariosView.xaml">
       <Generator>MSBuild:Compile</Generator>

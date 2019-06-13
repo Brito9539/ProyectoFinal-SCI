@@ -14,6 +14,8 @@ namespace SCI.DesktopClient.ViewModels
         private ArticulosView ArtView { get { return new ArticulosView(); } }
         private UsuariosView UsuarioView{ get { return new UsuariosView(); } }
         private ProveedoresView ProvView{ get { return new ProveedoresView(); } }
+        private EntradasView EntraView {get { return new EntradasView(); } }
+        private SalidasView SaliView { get { return new SalidasView(); } }
 
         public MainWindowViewModel()
         {
@@ -33,6 +35,15 @@ namespace SCI.DesktopClient.ViewModels
         {
             get { return new ActionCommand((o) => CurrentView = ProvView); }
         }
+         public ICommand SetEntradaView
+        {
+            get { return new ActionCommand((o) => CurrentView = EntraView); }
+        }
+        public ICommand SetSalidaView
+        {
+            get { return new ActionCommand((o) => CurrentView =SaliView); }
+        }
+
 
         private object currentView;
         public object CurrentView

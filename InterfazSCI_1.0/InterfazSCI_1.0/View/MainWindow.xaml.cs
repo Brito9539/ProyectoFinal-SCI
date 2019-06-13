@@ -27,18 +27,6 @@ namespace SCI.DesktopClient.Views
             DataContext = new MainWindowViewModel();
         }
 
-        private void btnProveedores_clicked(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void BtnUsuarios_Click(object sender, RoutedEventArgs e)
-        {
-         
-        }
-
-        private void BtnProveedores_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
+     
     }
 }
