@@ -52,6 +52,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -80,14 +81,14 @@
       <DependentUpon>SCIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SCIModel.Context.cs">
-      <DependentUpon>SCIModel.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>SCIModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="SCIModel.cs">
-      <DependentUpon>SCIModel.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>SCIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SCIModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,7 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="SCIModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -111,6 +114,9 @@
     <None Include="SCIModel.edmx.diagram">
       <DependentUpon>SCIModel.edmx</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SCIModel.Context.tt">
@@ -123,9 +129,6 @@
       <DependentUpon>SCIModel.edmx</DependentUpon>
       <LastGenOutput>SCIModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
