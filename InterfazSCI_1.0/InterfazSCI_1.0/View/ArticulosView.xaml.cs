@@ -22,5 +22,11 @@ namespace SCI.DesktopClient.Views
             agr.Show();
             
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            EditarArtView edit = new EditarArtView();
+            edit.Show();
+        }
     }
 }

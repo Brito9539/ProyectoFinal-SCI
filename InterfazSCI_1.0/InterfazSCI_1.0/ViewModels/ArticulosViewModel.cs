@@ -120,6 +120,7 @@ namespace SCI.DesktopClient.ViewModels
                 {
                     return;
                 }
+                Productos.Remove(selectedProducto);
                 GetProductos();
             }
         }

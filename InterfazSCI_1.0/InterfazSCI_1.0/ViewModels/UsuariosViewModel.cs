@@ -17,6 +17,7 @@ namespace SCI.DesktopClient.ViewModels
         public ICollection<usuario> Usuarios { get; private set; }
         public usuario _usuario = new usuario();
         static private usuario selectedUsuario = new usuario();
+
         public usuario Usuario
         {
             get
