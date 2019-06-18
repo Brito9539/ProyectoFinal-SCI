@@ -33,6 +33,13 @@ namespace SCI.Data
         {
             var objeto = context.usuario.Find(usuario.Matricula);
 
+            Check.Require(usuario.Matricula);
+            Check.Require(usuario.Nombre);
+            Check.Require(usuario.Apellido_Paterno);
+            Check.Require(usuario.Contraseña);
+            if (usuario.Admin == null)
+                throw new ArgumentNullException();
+
             context.Entry(objeto).CurrentValues.SetValues(usuario);
             context.SaveChanges();
         }
@@ -40,6 +47,11 @@ namespace SCI.Data
         public void updateProducto(producto producto)
         {
             var objeto = context.producto.Find(producto.idProducto);
+
+            Check.Require(producto.idProducto);
+            Check.Require(producto.Nombre);
+            Check.Require(producto.Unidad);
+            Check.Require(producto.PuntoReorden.ToString());
 
             context.Entry(objeto).CurrentValues.SetValues(producto);
             context.SaveChanges();
@@ -50,10 +62,19 @@ namespace SCI.Data
             var objeto = context.proveedor.Find(proveedor.Codigo);
 
             Check.Require(proveedor.Codigo);
-            Check.Require(proveedor.Correo);
-            Check.Require(proveedor.Telefono);
+            Check.Require(proveedor.Nombre);
 
             context.Entry(objeto).CurrentValues.SetValues(proveedor);
+            context.SaveChanges();
+        }
+
+        public void updateUbicacion(ubicacion ubicacion)
+        {
+            var objeto = context.ubicacion.Find(ubicacion.idUbicacion);
+
+            Check.Require(ubicacion.Colonia);
+
+            context.Entry(objeto).CurrentValues.SetValues(ubicacion);
             context.SaveChanges();
         }
 
@@ -63,7 +84,6 @@ namespace SCI.Data
             Check.Require(producto.idProducto);
             Check.Require(producto.Nombre);
             Check.Require(producto.Unidad);
-            Check.Require(producto.Cantidad_Actual.ToString());
             Check.Require(producto.PuntoReorden.ToString());
 
             context.producto.Add(producto);
@@ -74,15 +94,17 @@ namespace SCI.Data
         {
             Check.Require(proveedor.Codigo);
             Check.Require(proveedor.Nombre);
-            Check.Require(proveedor.Correo);
-            Check.Require(proveedor.Telefono);
-
+          
             context.proveedor.Add(proveedor);
             context.SaveChanges();
         }
 
         public void AddUbicacion(ubicacion ubicacion)
         {
+            Check.Require(ubicacion.Colonia);
+
+            context.ubicacion.Add(ubicacion);
+            context.SaveChanges();
         }
 
         public ICollection<usuario> GetUsuarios()
@@ -98,6 +120,11 @@ namespace SCI.Data
         public ICollection<producto> GetProductos()
         {
             return context.producto.ToArray();
+        }
+
+        public ICollection<ubicacion> GetUbicaciones()
+        {
+            return context.ubicacion.ToArray();
         }
 
         public void deleteUsuario(usuario selectedUsuario)
@@ -116,6 +143,12 @@ namespace SCI.Data
         public void deleteProducto(producto selectedProducto)
         {
             context.producto.Remove(selectedProducto);
+            context.SaveChanges();
+        }
+
+        public void deleteUbicacion(ubicacion selectedUbicacion)
+        {
+            context.ubicacion.Remove(selectedUbicacion);
             context.SaveChanges();
         }
 
