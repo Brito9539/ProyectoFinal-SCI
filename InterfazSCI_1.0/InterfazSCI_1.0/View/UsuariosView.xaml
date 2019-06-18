@@ -14,7 +14,7 @@
             <Hyperlink Command="{Binding GetUsuariosCommand}">refrescar</Hyperlink>
         </TextBlock>
         <Button x:Name ="btnAgregarUsu" Content="Agregar Nuevo Usuario" HorizontalAlignment="Left" Margin="493,28,0,0" VerticalAlignment="Top" Width="248" Background="#FF002457" Foreground="White" Height="57" FontFamily="Arial" FontSize="18" Click="BtnAgregarUsu_Click"/>
-        <DataGrid ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedUsuario}" x:Name="dtUsuarios" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694">
+        <DataGrid ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedUsuario}" Name="dtUsuarios" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694">
             <DataGrid.Resources>
                 <ContextMenu x:Key="RowMenu">
                     <MenuItem Header="Editar" Click="BtnUsuarios_Click"/>
