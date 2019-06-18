@@ -3,18 +3,22 @@ using SCI.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+
 
 namespace SCI.DesktopClient.ViewModels
 {
-    class ArticulosViewModel : ViewModel
+    public class ArticulosViewModel : ViewModel
     {
         private readonly BusinessContext context;
         public ICollection<producto> Productos { get; private set; }
         public producto _producto = new producto();
         private producto selectedProducto = new producto();
+
         public producto Producto
         {
             get
@@ -24,7 +28,7 @@ namespace SCI.DesktopClient.ViewModels
             private set
             {
                 _producto = value;
-                NotifyPropertyChanged("Articulo");
+                NotifyPropertyChanged("Producto");
             }
         }
 
@@ -64,6 +68,14 @@ namespace SCI.DesktopClient.ViewModels
             get
             {
                 return new ActionCommand(p => GetProductos());
+            }
+        }
+
+        public ActionCommand deleteProductoCommand
+        {
+            get
+            {
+                return new ActionCommand(p => deleteProducto());
             }
         }
 
@@ -107,7 +119,7 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public void DeleteProducto(producto _producto)
+        public void deleteProducto()
         {
 
             using (var api = new BusinessContext())
