@@ -60,6 +60,11 @@ namespace SCI.Data
         public void AddProducto(producto producto)
         {
             //TODO: añadir validaciones a campos obligatorios
+            Check.Require(producto.idProducto);
+            Check.Require(producto.Nombre);
+            Check.Require(producto.Unidad);
+            Check.Require(producto.Cantidad_Actual.ToString());
+            Check.Require(producto.PuntoReorden.ToString());
 
             context.producto.Add(producto);
             context.SaveChanges();
@@ -68,11 +73,16 @@ namespace SCI.Data
         public void AddProveedor(proveedor proveedor)
         {
             Check.Require(proveedor.Codigo);
+            Check.Require(proveedor.Nombre);
             Check.Require(proveedor.Correo);
             Check.Require(proveedor.Telefono);
 
             context.proveedor.Add(proveedor);
             context.SaveChanges();
+        }
+
+        public void AddUbicacion(ubicacion ubicacion)
+        {
         }
 
         public ICollection<usuario> GetUsuarios()
