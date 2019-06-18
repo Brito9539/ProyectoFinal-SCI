@@ -12,7 +12,7 @@ namespace SCI.DesktopClient.ViewModels
     class ArticulosViewModel : ViewModel
     {
         private readonly BusinessContext context;
-        public ICollection<producto> Usuarios { get; private set; }
+        public ICollection<producto> Productos { get; private set; }
         public producto _producto = new producto();
         private producto selectedProducto = new producto();
         public producto Producto
@@ -37,7 +37,7 @@ namespace SCI.DesktopClient.ViewModels
             set
             {
                 selectedProducto = value;
-                NotifyPropertyChanged("SelectedUsuario");
+                NotifyPropertyChanged("SelectedProducto");
             }
         }
 
@@ -48,7 +48,7 @@ namespace SCI.DesktopClient.ViewModels
         public ArticulosViewModel(BusinessContext context)
         {
             this.context = context;
-            this.Usuarios = new ObservableCollection<producto>();
+            this.Productos = new ObservableCollection<producto>();
         }
 
         public ActionCommand addProducto
@@ -91,19 +91,19 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
-        public void AddProducto(producto _usuario)
+        public void AddProducto(producto _producto)
         {
             using (var api = new BusinessContext())
             {
                 try
                 {
-                    api.AddProducto(_usuario);
+                    api.AddProducto(_producto);
                 }
                 catch (Exception ex)
                 {
                     return;
                 }
-                Usuarios.Add(_usuario);
+                Productos.Add(_producto);
             }
         }
 
@@ -126,10 +126,10 @@ namespace SCI.DesktopClient.ViewModels
 
         public void GetProductos()
         {
-            Usuarios.Clear();
+            Productos.Clear();
 
-            foreach (var usuario in context.GetProductos())
-                Usuarios.Add(usuario);
+            foreach (var articulo in context.GetProductos())
+                Productos.Add(articulo);
         }
 
     }
