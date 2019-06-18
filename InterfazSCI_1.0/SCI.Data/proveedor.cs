@@ -27,7 +27,7 @@ namespace SCI.Data
         public int idUbicacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
-        public virtual ubicacion ubicacion { get; set; }
+        protected virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
+        protected virtual ubicacion ubicacion { get; set; }
     }
 }

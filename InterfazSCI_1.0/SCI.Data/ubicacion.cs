@@ -27,6 +27,6 @@ namespace SCI.Data
         public string Colonia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<proveedor> proveedor { get; set; }
+        protected virtual ICollection<proveedor> proveedor { get; set; }
     }
 }

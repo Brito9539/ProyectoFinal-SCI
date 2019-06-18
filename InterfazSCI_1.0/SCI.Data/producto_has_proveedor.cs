@@ -24,8 +24,8 @@ namespace SCI.Data
         public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<entrada> entrada { get; set; }
-        public virtual producto producto { get; set; }
-        public virtual proveedor proveedor { get; set; }
+        protected virtual ICollection<entrada> entrada { get; set; }
+        protected virtual producto producto { get; set; }
+        protected virtual proveedor proveedor { get; set; }
     }
 }

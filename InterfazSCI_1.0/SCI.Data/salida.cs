@@ -22,8 +22,8 @@ namespace SCI.Data
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<double> cantidad { get; set; }
     
-        public virtual producto producto { get; set; }
-        public virtual usuario usuario { get; set; }
-        public virtual usuario usuario1 { get; set; }
+        protected virtual producto producto { get; set; }
+        protected virtual usuario usuario { get; set; }
+        protected virtual usuario usuario1 { get; set; }
     }
 }

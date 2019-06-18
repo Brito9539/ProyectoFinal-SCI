@@ -28,8 +28,8 @@ namespace SCI.Data
         public Nullable<double> PuntoReorden { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
+        protected virtual ICollection<producto_has_proveedor> producto_has_proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<salida> salida { get; set; }
+        protected virtual ICollection<salida> salida { get; set; }
     }
 }

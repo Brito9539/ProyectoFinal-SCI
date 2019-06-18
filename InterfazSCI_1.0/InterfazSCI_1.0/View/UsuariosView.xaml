@@ -17,8 +17,12 @@
         <DataGrid ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedUsuario}" x:Name="dtUsuarios" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694">
             <DataGrid.Resources>
                 <ContextMenu x:Key="RowMenu">
-                    <MenuItem Header="Editar" Command="{Binding }" Click="BtnUsuarios_Click"/>
-                    <MenuItem Header="Eliminar" Command="{Binding deleteUsuarioCommand}"/>
+                    <MenuItem Header="Editar" Click="BtnUsuarios_Click"/>
+                    <MenuItem Header="Eliminar" Command="{Binding deleteUsuarioCommand}">
+                        <MenuItem.DataContext>
+                            <viewModel:UsuariosViewModel/>
+                        </MenuItem.DataContext>
+                    </MenuItem>
                 </ContextMenu>
             </DataGrid.Resources>
             <DataGrid.RowStyle>

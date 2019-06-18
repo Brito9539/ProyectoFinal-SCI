@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SCI.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace SCI.DesktopClient.Views
         public AgregarUsuView()
         {
             InitializeComponent();
+            DataContext = new UsuariosViewModel();
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

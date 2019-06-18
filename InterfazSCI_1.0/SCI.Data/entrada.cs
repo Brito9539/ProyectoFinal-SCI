@@ -24,7 +24,7 @@ namespace SCI.Data
         public string nofactura { get; set; }
         public Nullable<double> cantidad { get; set; }
     
-        public virtual producto_has_proveedor producto_has_proveedor { get; set; }
-        public virtual usuario usuario { get; set; }
+        protected virtual producto_has_proveedor producto_has_proveedor { get; set; }
+        protected virtual usuario usuario { get; set; }
     }
 }

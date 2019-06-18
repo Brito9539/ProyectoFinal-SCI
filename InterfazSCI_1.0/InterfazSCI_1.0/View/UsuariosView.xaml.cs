@@ -21,6 +21,7 @@ namespace SCI.DesktopClient.Views
     /// </summary>
     public partial class UsuariosView : UserControl
     {
+
         public UsuariosView()
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace SCI.DesktopClient.Views
         {
             AgregarUsuView agr = new AgregarUsuView();
             agr.Show();
-
         }
 
         private void BtnUsuarios_Click(object sender, RoutedEventArgs e)

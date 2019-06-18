@@ -32,10 +32,10 @@ namespace SCI.Data
         public string Contraseña { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<entrada> entrada { get; set; }
+        protected virtual ICollection<entrada> entrada { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<salida> salida { get; set; }
+        protected virtual ICollection<salida> salida { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<salida> salida1 { get; set; }
+        protected virtual ICollection<salida> salida1 { get; set; }
     }
 }

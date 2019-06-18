@@ -16,7 +16,7 @@ namespace SCI.DesktopClient.ViewModels
         private readonly BusinessContext context;
         public ICollection<usuario> Usuarios { get; private set; }
         public usuario _usuario = new usuario();
-        private usuario selectedUsuario = new usuario();
+        static private usuario selectedUsuario = new usuario();
         public usuario Usuario
         {
             get
@@ -89,7 +89,7 @@ namespace SCI.DesktopClient.ViewModels
         {
             get
             {
-                return new ActionCommand(p => deleteUsuario(SelectedUsuario));
+                return new ActionCommand(p => deleteUsuario());
             }
         }
 
@@ -114,10 +114,11 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Usuarios.Add(_usuario);
+                GetUsuarios();
             }
         }
 
-        private void deleteUsuario(usuario selectedUsuario)
+        private void deleteUsuario()
         {
             using (var api = new BusinessContext())
             {
@@ -130,6 +131,7 @@ namespace SCI.DesktopClient.ViewModels
                     return;
                 }
                 Usuarios.Remove(selectedUsuario);
+                GetUsuarios();
             }
         }
         

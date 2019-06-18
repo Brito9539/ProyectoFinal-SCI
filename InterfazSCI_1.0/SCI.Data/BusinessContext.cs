@@ -92,7 +92,8 @@ namespace SCI.Data
 
         public void deleteUsuario(usuario selectedUsuario)
         {
-            context.usuario.Remove(selectedUsuario);
+            usuario _usuario = context.usuario.Where(u => u.Matricula == selectedUsuario.Matricula).FirstOrDefault();
+            context.usuario.Remove(_usuario);
             context.SaveChanges();
         }
 
