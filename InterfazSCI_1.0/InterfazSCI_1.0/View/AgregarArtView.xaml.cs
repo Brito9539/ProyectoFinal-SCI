@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SCI.DesktopClient.ViewModels;
 
 namespace SCI.DesktopClient.Views
 {
@@ -22,6 +23,12 @@ namespace SCI.DesktopClient.Views
         public AgregarArtView()
         {
             InitializeComponent();
+            DataContext = new ArticulosViewModel();
+        }
+
+        private void BtnAgregArt_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
