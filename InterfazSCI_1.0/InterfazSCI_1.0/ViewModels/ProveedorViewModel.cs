@@ -39,7 +39,7 @@ namespace SCI.DesktopClient.ViewModels
             set
             {
                 selectedProveedor = value;
-                NotifyPropertyChanged("SelectedUsuario");
+                NotifyPropertyChanged("SelectedProveedor");
             }
         }
 
@@ -130,8 +130,8 @@ namespace SCI.DesktopClient.ViewModels
         {
             Proveedores.Clear();
 
-            foreach (var usuario in context.GetProveedores())
-                Proveedores.Add(Proveedor);
+            foreach (var proveedor in context.GetProveedores())
+                Proveedores.Add(proveedor);
         }
     }
 }

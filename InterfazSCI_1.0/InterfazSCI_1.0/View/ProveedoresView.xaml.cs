@@ -30,5 +30,11 @@ namespace SCI.DesktopClient.Views
             AgregarProView agr = new AgregarProView();
             agr.Show();
         }
+
+        private void BtnProveedores_Click(object sender, RoutedEventArgs e)
+        {
+            EditarProView edit = new EditarProView();
+            edit.Show();
+        }
     }
 }
