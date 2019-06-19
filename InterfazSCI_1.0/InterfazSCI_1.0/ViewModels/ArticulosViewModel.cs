@@ -17,7 +17,7 @@ namespace SCI.DesktopClient.ViewModels
         private readonly BusinessContext context;
         public ICollection<producto> Productos { get; private set; }
         public producto _producto = new producto();
-        private producto selectedProducto = new producto();
+        static private producto selectedProducto = new producto();
 
         public producto Producto
         {
@@ -55,7 +55,7 @@ namespace SCI.DesktopClient.ViewModels
             this.Productos = new ObservableCollection<producto>();
         }
 
-        public ActionCommand addProducto
+        public ActionCommand addProductoCommand
         {
             get
             {
@@ -126,7 +126,7 @@ namespace SCI.DesktopClient.ViewModels
             {
                 try
                 {
-                    api.deleteProducto(_producto);
+                    api.deleteProducto(selectedProducto);
                 }
                 catch (Exception ex)
                 {

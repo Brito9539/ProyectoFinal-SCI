@@ -73,6 +73,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\ArticulosViewModel.cs" />
+    <Compile Include="ViewModels\UbicacionViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ProveedorViewModel.cs" />
     <Compile Include="ViewModels\UsuariosViewModel.cs" />
