@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SCI.Data.Tests
 {
     [TestClass]
-    public class BusinessContextTests
+    public class BusinessContextTests : FuntionalTest
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

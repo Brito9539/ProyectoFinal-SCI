@@ -8,7 +8,7 @@ namespace SCI.Data
 {
     public class BusinessContext : IDisposable
     {
-        private sci_bdEntities context;
+        public sci_bdEntities context;
         private bool disposed;
 
         public BusinessContext()
