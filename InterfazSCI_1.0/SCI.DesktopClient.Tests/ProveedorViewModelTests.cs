@@ -17,7 +17,8 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProveedor(new proveedor { Codigo="1111", Nombre = "aasdad"});
+                context.AddUbicacion(new ubicacion {Colonia = "colprueba" });
+                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad", idUbicacion = 1 });
 
                 var viewModel = new ProveedorViewModel(context);
                 viewModel.GetProveedoresCommand.Execute(null);
@@ -25,23 +26,7 @@ namespace SCI.DesktopClient.Tests
                 Assert.IsTrue(viewModel.Proveedores.Count == 1);
             }
         }
-
-        //[TestMethod]
-        //public void editarUsuarios()
-        //{
-        //    using (var context = new BusinessContext())
-        //    {
-        //        usuario selectedUsuario = new usuario { Nombre = "aasdad", Apellido_Paterno = "asdasd", Apellido_Materno = "aasdasda", Matricula = "1236", Admin = 1, Contraseña = "12345", Correo = "asdasdadasdasd" };
-
-        //        context.updateUsuario(selectedUsuario);
-
-        //        var viewModel = new UsuariosViewModel(context);
-        //        viewModel.editUsuarioCommand.Execute(null);
-
-        //        Assert.IsTrue);
-        //    }
-        //}
-
+        
         [TestMethod]
         public void editarProveedor()
         {
@@ -55,10 +40,6 @@ namespace SCI.DesktopClient.Tests
 
                 viewModel.SelectedProveedor.Nombre = "NuevoNombre";
                 viewModel.editProveedorCommand.Execute(null);
-
-                //usuario selectedUsuario = context.context.usuario.Where(u => u.Matricula == "1236").FirstOrDefault();
-                //context.context.Entry(selectedUsuario).CurrentValues.SetValues(new usuario { Nombre = "Nuevo", Apellido_Paterno = "asdasd", Apellido_Materno = "aasdasda", Matricula = "1236", Admin = 1, Contraseña = "12345", Correo = "asdasdadasdasd" });
-                //context.deleteUsuario(selectedUsuario);
 
                 var proveedor = context.context.usuario.Single();
                 context.context.Entry(proveedor).Reload();
@@ -82,14 +63,5 @@ namespace SCI.DesktopClient.Tests
                 Assert.IsTrue(viewModel.Proveedores.Count == 0);
             }
         }
-
-        //[TestMethod]
-        //public void addUsuarioAgregaUsuario()
-        //{
-        //    var viewModel = new UsuariosViewModel
-        //    {
-        //    };
-
-        //}
     }
 }

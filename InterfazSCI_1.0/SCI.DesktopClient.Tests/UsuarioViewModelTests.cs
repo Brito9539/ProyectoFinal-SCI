@@ -31,23 +31,7 @@ namespace SCI.DesktopClient.Tests
                 Assert.IsTrue(viewModel.Usuarios.Count == 1);
             }
         }
-
-        //[TestMethod]
-        //public void editarUsuarios()
-        //{
-        //    using (var context = new BusinessContext())
-        //    {
-        //        usuario selectedUsuario = new usuario { Nombre = "aasdad", Apellido_Paterno = "asdasd", Apellido_Materno = "aasdasda", Matricula = "1236", Admin = 1, Contraseña = "12345", Correo = "asdasdadasdasd" };
-
-        //        context.updateUsuario(selectedUsuario);
-
-        //        var viewModel = new UsuariosViewModel(context);
-        //        viewModel.editUsuarioCommand.Execute(null);
-
-        //        Assert.IsTrue);
-        //    }
-        //}
-
+        
         [TestMethod]
         public void editarUsuario()
         {
@@ -61,11 +45,7 @@ namespace SCI.DesktopClient.Tests
 
                 viewModel.SelectedUsuario.Nombre = "NuevoNombre";
                 viewModel.editUsuarioCommand.Execute(null);
-
-                //usuario selectedUsuario = context.context.usuario.Where(u => u.Matricula == "1236").FirstOrDefault();
-                //context.context.Entry(selectedUsuario).CurrentValues.SetValues(new usuario { Nombre = "Nuevo", Apellido_Paterno = "asdasd", Apellido_Materno = "aasdasda", Matricula = "1236", Admin = 1, Contraseña = "12345", Correo = "asdasdadasdasd" });
-                //context.deleteUsuario(selectedUsuario);
-
+                
                 var usuario = context.context.usuario.Single();
                 context.context.Entry(usuario).Reload();
                 Assert.AreEqual(viewModel.SelectedUsuario.Nombre, usuario.Nombre);
@@ -88,14 +68,5 @@ namespace SCI.DesktopClient.Tests
                 Assert.IsTrue(viewModel.Usuarios.Count == 0);
             }
         }
-
-        //[TestMethod]
-        //public void addUsuarioAgregaUsuario()
-        //{
-        //    var viewModel = new UsuariosViewModel
-        //    {
-        //    };
-
-        //}
     }
 }

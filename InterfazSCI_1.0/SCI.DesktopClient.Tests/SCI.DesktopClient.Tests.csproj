@@ -74,7 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UsuarioViewModelTests - Copia %282%29.cs" />
+    <Compile Include="ArticuloViewModelTests.cs" />
     <Compile Include="ProveedorViewModelTests.cs" />
     <Compile Include="UsuarioViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
