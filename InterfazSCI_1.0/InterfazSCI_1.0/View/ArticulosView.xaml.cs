@@ -28,5 +28,7 @@ namespace SCI.DesktopClient.Views
             EditarArtView edit = new EditarArtView();
             edit.Show();
         }
+
+      
     }
 }
