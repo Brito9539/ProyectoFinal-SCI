@@ -17,7 +17,7 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros" });
+                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros", Cantidad_Actual = 0, idProducto = "1234", PuntoReorden = 5 });
 
                 var viewModel = new ArticulosViewModel(context);
                 viewModel.GetProductosCommand.Execute(null);
@@ -31,7 +31,7 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros" });
+                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros", Cantidad_Actual = 0, idProducto = "1234", PuntoReorden = 5 });
 
                 var viewModel = new ArticulosViewModel(context);
                 viewModel.GetProductosCommand.Execute(null);
@@ -40,9 +40,9 @@ namespace SCI.DesktopClient.Tests
                 viewModel.SelectedProducto.Nombre = "NuevoNombre";
                 viewModel.editProductoCommand.Execute(null);
 
-                var usuario = context.context.usuario.Single();
-                context.context.Entry(usuario).Reload();
-                Assert.AreEqual(viewModel.SelectedProducto.Nombre, usuario.Nombre);
+                var producto = context.context.producto.Single();
+                context.context.Entry(producto).Reload();
+                Assert.AreEqual(viewModel.SelectedProducto.Nombre, producto.Nombre);
             }
         }
 
@@ -51,7 +51,7 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros" });
+                context.AddProducto(new producto { Nombre = "aaasdasd", Unidad = "Litros", Cantidad_Actual = 0, idProducto = "1234", PuntoReorden = 5 });
 
                 producto selectedProducto = context.context.producto.Where(u => u.Nombre == "aaasdasd").FirstOrDefault();
                 context.deleteProducto(selectedProducto);
