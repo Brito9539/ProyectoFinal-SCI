@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewModel="clr-namespace:SCI.DesktopClient.ViewModels"
              xmlns:local="clr-namespace:SCI.DesktopClient.Views"
+             d:DataContext="{d:DesignInstance viewModel:SalidaViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
@@ -12,13 +13,13 @@
         <TextBox Name="txtCantidad" HorizontalAlignment="Left" Height="24" Margin="252,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <TextBox Name="txtUnidad" HorizontalAlignment="Left" Height="24" Margin="440,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <TextBox Name="txtMatricula" HorizontalAlignment="Left" Height="24" Margin="610,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <TextBox Name="txtNomProduct" HorizontalAlignment="Left" Height="24" Margin="68,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
         <Label Content="Matricula:" HorizontalAlignment="Left" Margin="610,190,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="68,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.039,0.5" Foreground="#FF002457"/>
         <Label Content="Unidad:" HorizontalAlignment="Left" Margin="440,190,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="252,186,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Button x:Name ="btnConfirmSalida" Content="Confirmar Salida" HorizontalAlignment="Left" Margin="284,358,0,0" VerticalAlignment="Top" Width="224" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" />
         <Button x:Name ="btnGenerarReporte" Content="Generar Reporte" HorizontalAlignment="Left" Margin="536,68,0,0" VerticalAlignment="Top" Width="194" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" Click="BtnGenerarReporte_Click_1" />
+        <ComboBox ItemsSource="{Binding Productos}" Name="cmbNombre" HorizontalAlignment="Left" Margin="73,212,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>
