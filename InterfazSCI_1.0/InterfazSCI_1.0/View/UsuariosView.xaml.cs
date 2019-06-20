@@ -1,4 +1,5 @@
-﻿using SCI.DesktopClient.ViewModels;
+﻿using SCI.Data;
+using SCI.DesktopClient.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,16 @@ namespace SCI.DesktopClient.Views
     /// </summary>
     public partial class UsuariosView : UserControl
     {
-
+        public ICollection<usuario> Usuarios;
         public UsuariosView()
         {
             InitializeComponent();
             DataContext = new UsuariosViewModel();
-            
+
+            UsuariosViewModel artvm = new UsuariosViewModel();
+            Usuarios = artvm.context.context.usuario.ToList();
+            dtUsuarios.ItemsSource = Usuarios;
+
         }
 
         private void BtnAgregarUsu_Click(object sender, RoutedEventArgs e)

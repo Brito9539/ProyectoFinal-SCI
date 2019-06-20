@@ -14,7 +14,7 @@ namespace SCI.DesktopClient.ViewModels
 {
     public class ArticulosViewModel : ViewModel
     {
-        private readonly BusinessContext context;
+        public readonly BusinessContext context;
         public ICollection<producto> Productos { get; private set; }
         public producto _producto = new producto();
         static private producto selectedProducto = new producto();

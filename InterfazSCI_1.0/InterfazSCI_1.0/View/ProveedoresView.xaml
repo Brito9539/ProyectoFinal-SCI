@@ -10,9 +10,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
     
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="319,74,0,355.6" Width="49">
-            <Hyperlink Command="{Binding GetProveedoresCommand}">refrescar</Hyperlink>
-        </TextBlock>
         <Label Content="Proveedores" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="249" FontWeight="Bold"/>
         <Button x:Name ="btnAgregarPro" Content="Agregar Nuevo Proveedor" HorizontalAlignment="Left" Margin="493,28,0,0" VerticalAlignment="Top" Width="248" Background="#FF002457" Foreground="White" Height="57" FontFamily="Arial" FontSize="18" Click="BtnAgregarPro_Click"/>
         <DataGrid  ItemsSource="{Binding Proveedores}" SelectedItem="{Binding SelectedProveedor}" x:Name="dtProveedores" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694" Foreground="#FF002457">
