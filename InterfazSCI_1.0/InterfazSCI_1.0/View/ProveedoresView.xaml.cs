@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SCI.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace SCI.DesktopClient.Views
         public ProveedoresView()
         {
             InitializeComponent();
-
+            DataContext = new ProveedorViewModel();
         }
 
         private void BtnAgregarPro_Click(object sender, RoutedEventArgs e)
