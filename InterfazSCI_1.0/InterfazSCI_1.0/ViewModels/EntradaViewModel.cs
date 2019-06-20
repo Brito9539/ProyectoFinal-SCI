@@ -46,6 +46,7 @@ namespace SCI.DesktopClient.ViewModels
             this.Proveedores = new ObservableCollection<string>();
             this.Entradas = new ObservableCollection<entrada>();
             GetProductosNames();
+            GetProveedoresNames();
         }
 
         public ActionCommand addEntradaCommand
