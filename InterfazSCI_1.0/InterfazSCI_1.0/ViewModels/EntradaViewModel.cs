@@ -13,7 +13,7 @@ namespace SCI.DesktopClient.ViewModels
 {
     public class EntradaViewModel : ViewModel
     {
-        private readonly BusinessContext context;
+        public readonly BusinessContext context;
         public ICollection<entrada> Entradas { get; private set; }
         public ICollection<string> Productos { get; private set; }
         public ICollection<string> Proveedores { get; private set; }

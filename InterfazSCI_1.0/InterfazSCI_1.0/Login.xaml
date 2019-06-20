@@ -14,7 +14,7 @@
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="24,314,-124,0" VerticalAlignment="Top" Width="100" Foreground="#FF002457"/>
         <Button x:Name="btnLlogin" Content="Inciar Sesión" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="88,359,-180,0" Height="24" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnLlogin_Click"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="124,95,-124,0" VerticalAlignment="Top" Width="0"/>
-        <PasswordBox Name="txtPass" HorizontalAlignment="Left" Margin="124,314,-224,0" VerticalAlignment="Top" Width="100"/>
+        <PasswordBox Name="txtPass" HorizontalAlignment="Left" Margin="124,314,-224,0" VerticalAlignment="Top" Width="100" Height="26"/>
 
     </Grid>
 </Window>
