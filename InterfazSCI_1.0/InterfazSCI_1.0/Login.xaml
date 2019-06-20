@@ -8,12 +8,13 @@
         Title="Login" Height="450" Width="269.767">
     <Grid Margin="0,0,487,0">
         <Image HorizontalAlignment="Left" Height="236" Margin="0,2,-260,0" VerticalAlignment="Top" Width="260" Source="Recursos/logomodello.png" Stretch="Fill"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="124,272,-224,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="124,314,-224,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+        <TextBox Name ="txtMatri" HorizontalAlignment="Left" Height="24" Margin="124,272,-224,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+        
         <Label Content="Matrícula" HorizontalAlignment="Left" Margin="24,272,-124,0" VerticalAlignment="Top" Width="100" Foreground="#FF002457"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="24,314,-124,0" VerticalAlignment="Top" Width="100" Foreground="#FF002457"/>
         <Button x:Name="btnLlogin" Content="Inciar Sesión" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="88,359,-180,0" Height="24" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" Click="BtnLlogin_Click"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="124,95,-124,0" VerticalAlignment="Top" Width="0"/>
+        <PasswordBox Name="txtPass" HorizontalAlignment="Left" Margin="124,314,-224,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>
