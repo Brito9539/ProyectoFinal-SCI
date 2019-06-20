@@ -21,7 +21,7 @@
                     <MenuItem Header="Editar" Click="BtnProveedores_Click"/>
                     <MenuItem Header="Eliminar" Command="{Binding deleteProveedorCommand}">
                         <MenuItem.DataContext>
-                            <viewModel:UsuariosViewModel/>
+                            <viewModel:ProveedorViewModel/>
                         </MenuItem.DataContext>
                     </MenuItem>
                 </ContextMenu>

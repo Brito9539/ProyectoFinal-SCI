@@ -16,6 +16,7 @@ namespace SCI.DesktopClient.ViewModels
         private readonly BusinessContext context;
         public ICollection<entrada> Entradas { get; private set; }
         public ICollection<string> Productos { get; private set; }
+        public ICollection<string> Proveedores { get; private set; }
         public entrada _entrada = new entrada();
         
 
@@ -42,6 +43,7 @@ namespace SCI.DesktopClient.ViewModels
         {
             this.context = context;
             this.Productos = new ObservableCollection<string>();
+            this.Proveedores = new ObservableCollection<string>();
             this.Entradas = new ObservableCollection<entrada>();
             GetProductosNames();
         }
@@ -70,6 +72,13 @@ namespace SCI.DesktopClient.ViewModels
             }
         }
 
+        public void GetProveedoresNames()
+        {
+            Proveedores.Clear();
+
+            foreach (var proveedor in context.GetProveedores())
+                Proveedores.Add(proveedor.Nombre);
+        }
 
         public void GetProductosNames()
         {

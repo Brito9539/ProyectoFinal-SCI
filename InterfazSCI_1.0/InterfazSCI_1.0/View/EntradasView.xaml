@@ -11,7 +11,7 @@
     <Grid Background="White" >
         <Label Content="Entradas" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="173" FontWeight="Bold"/>
         <ComboBox ItemsSource="{Binding Productos}" Name="cmbNombrePorducto" HorizontalAlignment="Left" Margin="120,155,0,0" VerticalAlignment="Top" Width="120" Foreground="#FF002457"/>
-        <ComboBox  Name="cmbProveedor" HorizontalAlignment="Left" Margin="538,266,0,0" VerticalAlignment="Top" Width="110" Height="24" Foreground="#FF002457"/>
+        <ComboBox ItemsSource="{Binding Proveedores}" Name="cmbProveedor" HorizontalAlignment="Left" Margin="538,266,0,0" VerticalAlignment="Top" Width="110" Height="24" Foreground="#FF002457"/>
         <TextBox Name ="txtTipoUnidad" HorizontalAlignment="Left" Margin="538,155,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Height="22" Width="110" Foreground="#FF002457" />
         <TextBox Name ="txtPrecio" HorizontalAlignment="Left" Margin="120,266,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="24" Width="120" Foreground="#FF002457" OpacityMask="Black"/>
         <TextBox Name ="txtNumFactura" HorizontalAlignment="Left" Margin="340,266,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="24" Width="110" Foreground="#FF002457"/>
