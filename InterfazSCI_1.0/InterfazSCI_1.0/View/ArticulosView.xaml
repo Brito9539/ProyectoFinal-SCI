@@ -10,7 +10,7 @@
     <Grid Background="White">
         <Label Content="Artículos" HorizontalAlignment="Left" Margin="47,28,0,0" VerticalAlignment="Top" Foreground="#FF002457" FontFamily="Arial" FontSize="36" Height="57" Width="173" FontWeight="Bold"/>
         <Button Name ="btnAgregarArt" Content="Agregar Nuevo Artículo" HorizontalAlignment="Left" Margin="493,28,0,0" VerticalAlignment="Top" Width="248" Background="#FF002457" Foreground="White" Height="57" FontFamily="Arial" FontSize="18" Click="BtnAgregarArt_Click"/>
-        <DataGrid  ItemsSource="{Binding Productos}" SelectedItem="{Binding SelectedProducto}" Name="dtArticulos" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694" Foreground="#FF002457" >
+        <DataGrid  ItemsSource="{Binding Productos}" SelectedItem="{Binding SelectedProducto}" Name="dtArticulos" HorizontalAlignment="Left" Height="304" Margin="47,110,0,0" VerticalAlignment="Top" Width="694" Foreground="#FF002457" AutoGenerateColumns="False" >
             <DataGrid.Resources>
                 <ContextMenu x:Key="RowMenu">
                     <MenuItem Header="Editar" Click="MenuItem_Click"/>
@@ -21,6 +21,13 @@
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding idProducto}"/>
+                <DataGridTextColumn Header="Nombre Artículo" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Unidad" Binding="{Binding Unidad}"/>
+                <DataGridTextColumn Header="Cantidad Actual" Binding="{Binding Cantidad_Actual}"/>
+                <DataGridTextColumn Header="Punto de Reorden" Binding="{Binding PuntoReorden}"/>
+            </DataGrid.Columns>
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow" >
                     <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
