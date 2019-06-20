@@ -23,6 +23,7 @@ namespace SCI.DesktopClient.Views
         public ProveedoresView()
         {
             InitializeComponent();
+
         }
 
         private void BtnAgregarPro_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SCI.DesktopClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace SCI.DesktopClient.Views
         public EditarArtView()
         {
             InitializeComponent();
+            DataContext = new ArticulosViewModel();
+        }
+
+        private void BtnEditarArt_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
