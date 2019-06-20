@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 namespace SCI.DesktopClient.Views
 {
     /// <summary>
-    /// Lógica de interacción para SalidasView.xaml
+    /// Lógica de interacción para SalidasView.xaml00
     /// </summary>
     public partial class SalidasView : UserControl
     {
@@ -32,7 +32,7 @@ namespace SCI.DesktopClient.Views
         public SalidasView()
         {
             InitializeComponent();
-
+            DataContext = new SalidaViewModel();
             salidas = svm.context.context.salida.ToList();
         }
 
@@ -70,21 +70,26 @@ namespace SCI.DesktopClient.Views
                 articulo = svm.context.context.producto.Where(s => s.idProducto == salida.PRODUCTO_idProducto).FirstOrDefault();
                 xlWorkSheet.Cells[i, 2] = articulo.Nombre;
                 xlWorkSheet.Cells[i, 3] = salida.USUARIO_Matricula1;
-                xlWorkSheet.Cells[i, 4] = "7:30";
+                xlWorkSheet.Cells[i, 4] = salida.hora.ToString();
                 xlWorkSheet.Cells[i, 5] = salida.fecha;
                 xlWorkSheet.Cells[i, 6] = salida.cantidad;
                 i++;
             }
+            try
+            {
+                xlWorkBook.SaveAs("D:\\ReporteSalidas.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.Close(true, misValue, misValue);
+                xlApp.Quit();
 
-            xlWorkBook.SaveAs("F:\\ReporteSalidas.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            xlWorkBook.Close(true, misValue, misValue);
-            xlApp.Quit();
-
-            Marshal.ReleaseComObject(xlWorkSheet);
-            Marshal.ReleaseComObject(xlWorkBook);
-            Marshal.ReleaseComObject(xlApp);
-
-
+                Marshal.ReleaseComObject(xlWorkSheet);
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+                MessageBox.Show("Reporte generado con éxito.");
+            }
+            catch
+            {
+                MessageBox.Show("No se pudo generar el reporte.");
+            }
         }
 
         private void BtnGenerarReporte_Click_1(object sender, RoutedEventArgs e)

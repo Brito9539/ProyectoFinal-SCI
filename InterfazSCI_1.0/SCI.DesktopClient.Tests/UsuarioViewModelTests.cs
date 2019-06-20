@@ -41,6 +41,7 @@ namespace SCI.DesktopClient.Tests
 
                 var viewModel = new UsuariosViewModel(context);
                 viewModel.GetUsuariosCommand.Execute(null);
+
                 viewModel.SelectedUsuario = viewModel.Usuarios.First();
 
                 viewModel.SelectedUsuario.Nombre = "NuevoNombre";

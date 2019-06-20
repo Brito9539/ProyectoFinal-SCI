@@ -17,8 +17,8 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddUbicacion(new ubicacion {Colonia = "colprueba" });
-                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad", idUbicacion = 1 });
+                context.AddUbicacion(new ubicacion {Colonia = "colprueba", Calle = "1", Cruzamientos = "2 y 4", Numero = "1a" });
+                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad", idUbicacion = 1, Correo = "asfasf@outlook.com", Telefono = "9999999999" });
 
                 var viewModel = new ProveedorViewModel(context);
                 viewModel.GetProveedoresCommand.Execute(null);
@@ -32,7 +32,8 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad" });
+                context.AddUbicacion(new ubicacion { Colonia = "colprueba", Calle = "1", Cruzamientos = "2 y 4", Numero = "1a" });
+                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad", idUbicacion = 1, Correo = "asfasf@outlook.com", Telefono = "9999999999" });
 
                 var viewModel = new ProveedorViewModel(context);
                 viewModel.GetProveedoresCommand.Execute(null);
@@ -52,8 +53,11 @@ namespace SCI.DesktopClient.Tests
         {
             using (var context = new BusinessContext())
             {
-                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad" });
+                context.AddUbicacion(new ubicacion { Colonia = "colprueba", Calle = "1", Cruzamientos = "2 y 4", Numero = "1a" });
+                context.AddProveedor(new proveedor { Codigo = "1111", Nombre = "aasdad", idUbicacion = 1, Correo = "asfasf@outlook.com", Telefono = "9999999999" });
 
+                ubicacion selectedUbicacion = context.context.ubicacion.Where(u => u.idUbicacion == 1).FirstOrDefault();
+                context.deleteUbicacion(selectedUbicacion);
                 proveedor selectedProveedor = context.context.proveedor.Where(u => u.Codigo == "1111").FirstOrDefault();
                 context.deleteProveedor(selectedProveedor);
 
