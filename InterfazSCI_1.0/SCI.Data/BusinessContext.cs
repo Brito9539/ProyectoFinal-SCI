@@ -114,6 +114,13 @@ namespace SCI.Data
             context.SaveChanges();
         }
 
+        public void AddSalida(salida salida)
+        {
+            context.salida.Add(salida);
+            context.SaveChanges();
+        }
+
+
         public ICollection<usuario> GetUsuarios()
         {
             return context.usuario.ToArray();

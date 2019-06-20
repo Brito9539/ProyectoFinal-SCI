@@ -1,4 +1,6 @@
-﻿using SCI.DesktopClient.ViewModels;
+
+﻿using SCI.Data;
+using SCI.DesktopClient.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +18,21 @@ using System.Windows.Shapes;
 
 namespace SCI.DesktopClient.Views
 {
-    /// <summary>
-    /// Lógica de interacción para ProveedoresView.xaml
-    /// </summary>
     public partial class ProveedoresView : UserControl
     {
+
+        public ICollection<proveedor> Proveedores;
+
         public ProveedoresView()
         {
             InitializeComponent();
             DataContext = new ProveedorViewModel();
+
+            UsuariosViewModel artvm = new UsuariosViewModel();
+            Proveedores = artvm.context.context.proveedor.ToList();
+            dtProveedores.ItemsSource = Proveedores;
+
+
         }
 
         private void BtnAgregarPro_Click(object sender, RoutedEventArgs e)

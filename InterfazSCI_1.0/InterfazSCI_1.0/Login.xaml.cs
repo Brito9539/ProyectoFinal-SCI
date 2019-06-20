@@ -20,8 +20,6 @@ namespace SCI.DesktopClient
         private void BtnLlogin_Click(object sender, RoutedEventArgs e)
         {
             UsuariosViewModel uvm = new UsuariosViewModel();
-
-
             usuario usu = new usuario();
 
             try

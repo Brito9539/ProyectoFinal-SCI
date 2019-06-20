@@ -18,7 +18,7 @@
         <Label Content="Unidad:" HorizontalAlignment="Left" Margin="440,190,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="252,186,0,0" VerticalAlignment="Top" Foreground="#FF002457"/>
         <Button x:Name ="btnConfirmSalida" Content="Confirmar Salida" HorizontalAlignment="Left" Margin="284,358,0,0" VerticalAlignment="Top" Width="224" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" />
-        <Button x:Name ="btnGenerarReporte" Content="Generar Reporte" HorizontalAlignment="Left" Margin="536,68,0,0" VerticalAlignment="Top" Width="194" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" />
+        <Button x:Name ="btnGenerarReporte" Content="Generar Reporte" HorizontalAlignment="Left" Margin="536,68,0,0" VerticalAlignment="Top" Width="194" Background="#FF002457" Foreground="White" Height="49" FontFamily="Arial" FontSize="18" Click="BtnGenerarReporte_Click_1" />
 
     </Grid>
 </UserControl>

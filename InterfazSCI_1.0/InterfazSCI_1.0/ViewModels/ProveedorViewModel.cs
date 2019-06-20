@@ -13,7 +13,7 @@ namespace SCI.DesktopClient.ViewModels
 {
     public class ProveedorViewModel : ViewModel
     {
-        private readonly BusinessContext context;
+        public readonly BusinessContext context;
         public ICollection<proveedor> Proveedores { get; private set; }
         public proveedor _proveedor = new proveedor();
         private proveedor selectedProveedor = new proveedor();
