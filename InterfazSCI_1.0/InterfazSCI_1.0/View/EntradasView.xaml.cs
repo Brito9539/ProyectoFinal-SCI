@@ -24,6 +24,7 @@ namespace SCI.DesktopClient.Views
         public EntradasView()
         {
             InitializeComponent();
+            DataContext = new EntradaViewModel();
         }
     }
 }

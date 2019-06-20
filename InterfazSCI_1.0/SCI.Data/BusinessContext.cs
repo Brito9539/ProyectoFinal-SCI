@@ -104,6 +104,13 @@ namespace SCI.Data
             Check.Require(ubicacion.Colonia);
 
             context.ubicacion.Add(ubicacion);
+            
+            context.SaveChanges();
+        }
+
+        public void AddEntrada(entrada entrada)
+        {
+            context.entrada.Add(entrada);
             context.SaveChanges();
         }
 

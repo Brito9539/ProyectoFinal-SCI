@@ -21,6 +21,6 @@
         <Label Content="Tipo de unidad" HorizontalAlignment="Left" Margin="554,123,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="132"/>
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="321,128,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="130"/>
         <Label Content="Punto de reorden" HorizontalAlignment="Left" Margin="321,204,0,0" VerticalAlignment="Top" Foreground="#FF002457" IsEnabled="False" Width="130"/>
-        <Button Command="{Binding addProducto}" x:Name="btnAgregArt"   Click="BtnAgregArt_Click" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="303,320,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" />
+        <Button Command="{Binding addProductoCommand}" x:Name="btnAgregArt"   Click="BtnAgregArt_Click" Content="Agregar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="303,320,0,0" Height="38" Background="#FF002457" Foreground="White" BorderBrush="#FF002457" />
     </Grid>
 </Window>
