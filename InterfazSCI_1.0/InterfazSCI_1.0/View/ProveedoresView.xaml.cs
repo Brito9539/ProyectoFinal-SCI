@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using SCI.Data;
 using SCI.DesktopClient.ViewModels;
+=======
+﻿using SCI.DesktopClient.ViewModels;
+>>>>>>> 842adf38b6bd4b64ce547f262c24971833e33019
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +30,13 @@ namespace SCI.DesktopClient.Views
         {
             InitializeComponent();
             DataContext = new ProveedorViewModel();
+<<<<<<< HEAD
             UsuariosViewModel artvm = new UsuariosViewModel();
             Proveedores = artvm.context.context.proveedor.ToList();
             dtProveedores.ItemsSource = Proveedores;
 
+=======
+>>>>>>> 842adf38b6bd4b64ce547f262c24971833e33019
         }
 
         private void BtnAgregarPro_Click(object sender, RoutedEventArgs e)

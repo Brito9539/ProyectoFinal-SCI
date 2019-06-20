@@ -11,64 +11,64 @@ using System.Windows.Input;
 
 namespace SCI.DesktopClient.ViewModels
 {
-    public class EntradaViewModel : ViewModel
+    class SalidaViewModel : ViewModel
     {
-        public readonly BusinessContext context;
-        public ICollection<entrada> Entradas { get; private set; }
+        private readonly BusinessContext context;
+        public ICollection<salida> Salidas { get; private set; }
         public ICollection<string> Productos { get; private set; }
         public ICollection<string> Proveedores { get; private set; }
-        public entrada _entrada = new entrada();
-        
+        public salida _salida = new salida();
 
-        public entrada Entrada
+
+        public salida Salida
         {
             get
             {
-                return _entrada;
+                return _salida;
             }
             private set
             {
-                _entrada = value;
-                NotifyPropertyChanged("Entrada");
+                _salida = value;
+                NotifyPropertyChanged("Salida");
             }
         }
 
 
 
-        public EntradaViewModel() : this(new BusinessContext())
+        public SalidaViewModel() : this(new BusinessContext())
         {
         }
 
-        public EntradaViewModel(BusinessContext context)
+        public SalidaViewModel(BusinessContext context)
         {
             this.context = context;
             this.Productos = new ObservableCollection<string>();
             this.Proveedores = new ObservableCollection<string>();
-            this.Entradas = new ObservableCollection<entrada>();
+            this.Salidas = new ObservableCollection<salida>();
             GetProductosNames();
         }
 
-        public ActionCommand addEntradaCommand
+        public ActionCommand addSalidaCommand
         {
             get
             {
-                return new ActionCommand(p => AddEntrada(Entrada));
+                return new ActionCommand(p => AddSalida(Salida));
             }
         }
 
-        public void AddEntrada(entrada _entrada)
+        public void AddSalida(salida _salida)
         {
             using (var api = new BusinessContext())
             {
                 try
                 {
-                    api.AddEntrada(_entrada);
+                    api.AddSalida(_salida);
                 }
                 catch (Exception ex)
                 {
                     return;
                 }
-                Entradas.Add(_entrada);
+                Salidas.Add(_salida);
             }
         }
 
